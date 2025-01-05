@@ -1,0 +1,88 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>秦皇岛图片展示</title>  
+    <style>  
+        body, html {  
+            margin: 0;  
+            padding: 0;  
+            width: 100%;  
+            height: 100%;  
+            overflow: hidden; /* 防止滚动条出现，但可能需要根据实际情况调整 */  
+        }  
+  
+        .image-container {  
+            position: relative;  
+            width: 100%;  
+            height: 100%;  
+            display: flex;  
+            flex-wrap: wrap;  
+            justify-content: space-around; /* 图片之间留出一些空间 */  
+        }  
+  
+        .image-wrapper {  
+            position: relative;  
+            width: 45%; /* 调整宽度以适应更多图片 */  
+            height: 80%; /* 调整高度，保持宽高比或根据需要调整 */  
+            margin: 2.5%; /* 图片之间的间距 */  
+        }  
+  
+        .image-wrapper img {  
+            width: 100%;  
+            height: 100%;  
+            object-fit: cover; /* 图片按比例缩放并填充容器 */  
+        }  
+  
+        .description-container {  
+            position: absolute;  
+            bottom: 0; /* 调整为顶部则使用 top: 0; 但这里为了示例放在底部 */  
+            left: 0;  
+            width: 100%;  
+            text-align: center; /* 文本居中 */  
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */  
+            color: white;  
+            padding: 10px; /* 内边距 */  
+            box-sizing: border-box; /* 包括内边距和边框在内计算宽度和高度 */  
+            opacity: 0; /* 初始隐藏 */  
+            transition: opacity 0.3s ease; /* 添加过渡效果 */  
+        }  
+  
+        .image-wrapper:hover .description-container {  
+            opacity: 1; /* 鼠标悬停时显示描述 */  
+        }  
+  
+        .link-button {  
+            position: absolute;  
+            top: 10px;  
+            right: 10px;  
+            padding: 10px 20px;  
+            background-color: #007BFF;  
+            color: white;  
+            text-decoration: none;  
+            border-radius: 5px;  
+            font-size: 16px;  
+            z-index: 1000; /* 确保按钮在最上层 */  
+        }  
+  
+        .link-button:hover {  
+            background-color: #0056b3; /* 鼠标悬停时改变背景色 */  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="image-container">  
+        <div class="image-wrapper">  
+            <img src="../picture/秦皇岛1.jpg" alt="秦皇岛图片1">  
+            <div class="description-container">山海关：明长城的东北关隘之一，有“天下第一关”之称，山海关，位于中国河北省秦皇岛市东北部，是明长城的东部起点，素有“天下第一关”之称。其地势险要，建筑雄伟，自古即为军事要塞。山海关不仅有着厚重的历史文化底蕴，还因其独特的地理位置和建筑风格，吸引了无数游客前来探访。无论是漫步在古城墙上，还是登上角山长城远眺，都能感受到那份历史的沧桑与壮丽。。</div>  
+        </div>  
+        <div class="image-wrapper">  
+            <img src="../picture/秦皇岛2.jpg" alt="秦皇岛图片2">  
+            <div class="description-container">北戴河东海水浴场位于秦皇岛市北戴河区，是一处享有盛誉的海滨浴场。这里沙质细腻，海水清澈，气候宜人，是夏季避暑、游泳、日光浴的绝佳去处。浴场设施齐全，包括洗脚沙水管、公用卫生间、存包柜子和沙滩洗浴间等，为游客提供了极大的便利。此外，周边景色优美，山海相依，让人在享受海滨乐趣的同时，也能领略到大自然的壮丽景色。</div>  
+        </div>  
+        <!-- 如果有更多图片，可以继续添加 .image-wrapper 元素 -->  
+        <a href="../走进软件.html" class="link-button">河北文旅</a>  
+    </div>  
+</body>  
+</html>

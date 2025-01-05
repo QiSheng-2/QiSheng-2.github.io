@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>娱乐页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('picture/f08f13a5fd95425626dd1924953b673.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: flex;
+            background-position: center;
+            background-color: white;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #05c5fb;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .content {
+            margin-top: 80px;
+            /* Adjust this value to avoid overlap with the navbar */
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .game-link {
+            margin: 20px;
+        }
+
+        .game-link img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .game-link img:hover {
+            transform: scale(1.1);
+        }
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>娱乐</h1>
+    </div>
+    <div class="content">
+        <div class="game-link">
+            <a href="井字棋网页版.html">
+                <img src="picture/315D525B6BB69031CDBB51C958C615A2.jpg" alt="井字棋游戏">
+            </a>
+        </div>
+        <div class="game-link">
+            <a href="tanchishe.html">
+                <img src="picture/5F8F2DDEE25B6815540006657A473E45.jpg" alt="贪吃蛇游戏">
+            </a>
+        </div>
+    </div>
+    <button class="button" onclick="window.location.href='renyimen.html'">返回</button>
+</body>
+
+</html>
