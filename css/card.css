@@ -1,0 +1,24 @@
+.card {
+    /* width: 300px; */
+    height: 200px;
+    overflow: hidden;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #05c5fb;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.word {
+    text-align: center;
+    font-size: 24px;
+    display: none;
+}
+
+.word.active {
+    display: block;
+}
