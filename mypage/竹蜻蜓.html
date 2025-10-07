@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祖国的大好河山</title>
+    <link rel="stylesheet" href="css/card.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #05c5fb;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .content {
+            padding: 2em;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+
+
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* 图片之间留出一些空间 */
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 45%;
+            /* 调整宽度以适应更多图片 */
+            height: 80%;
+            /* 调整高度，保持宽高比或根据需要调整 */
+            margin: 2.5%;
+            /* 图片之间的间距 */
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 图片按比例缩放并填充容器 */
+        }
+
+        .description-container {
+            position: absolute;
+            bottom: 0;
+            /* 调整为顶部则使用 top: 0; 但这里为了示例放在底部 */
+            left: 0;
+            width: 100%;
+            text-align: center;
+            /* 文本居中 */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* 半透明背景 */
+            color: white;
+            padding: 10px;
+            /* 内边距 */
+            box-sizing: border-box;
+            /* 包括内边距和边框在内计算宽度和高度 */
+            opacity: 0;
+            /* 初始隐藏 */
+            transition: opacity 0.3s ease;
+            /* 添加过渡效果 */
+        }
+
+        .image-wrapper:hover .description-container {
+            opacity: 1;
+            /* 鼠标悬停时显示描述 */
+        }
+
+        .link-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            z-index: 1000;
+            /* 确保按钮在最上层 */
+        }
+
+        .link-button:hover {
+            background-color: #0056b3;
+            /* 鼠标悬停时改变背景色 */
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>带上竹蜻蜓领略祖国的大好河山</h1>
+        <button class="button" onclick="window.location.href='renyimen.html'">返回</button>
+    </header>
+    <div class="card">
+        <div class="content">
+            <p>
+                中国，这片古老而又充满活力的土地，蕴藏着无数令人心旷神怡的自然奇观与人文景观，构成了其独一无二的大好河山。从北国的雄浑壮丽到南疆的温婉秀美，每一寸土地都书写着自然与历史的辉煌篇章。
+
+                北国风光，千里冰封，万里雪飘，长城蜿蜒其间，如巨龙般守护着这片广袤的土地。东北的林海雪原，冬季银装素裹，夏季绿意盎然，是探险与休闲的绝佳去处。而西北的沙漠与戈壁，则以其苍凉与神秘吸引着无数旅人的目光，敦煌莫高窟的千年壁画，更是人类文明史上的璀璨明珠。
+
+                转向中原，黄河之水天上来，奔腾不息，滋养了华夏文明的摇篮。五岳归来不看山，黄山归来不看岳，中原的山川之美，不仅在于其雄伟险峻，更在于其深厚的文化底蕴与人文情怀。洛阳的牡丹、杭州的西湖、苏州的园林，每一处都是自然与人文和谐共生的典范。
+
+                南方水乡，小桥流水人家，烟雨蒙蒙中透露出江南独有的温婉与细腻。桂林山水甲天下，漓江的水，清澈如镜，倒映着翠竹青山，仿佛一幅流动的水墨画。海南的天涯海角，则是热带风情的浪漫象征，碧海蓝天，椰风海韵，让人心旷神怡。
+
+                此外，还有西藏的雪域高原，神秘莫测；四川的九寨沟，色彩斑斓；云南的丽江古城，古朴宁静……每一处都是大自然的杰作，每一处都承载着中华民族的历史记忆与文化传承。
+
+                中国的大好河山，不仅是大自然的恩赐，更是中华民族智慧与勇气的见证。它激发着人们对美好生活的向往，也激励着每一位中华儿女为实现中华民族伟大复兴的中国梦而努力奋斗。
+            </p>
+
+        </div>
+    </div>
+    <div style="text-align: center; margin: 20px 0;"></div>
+    <img src="picture\FB428C418F2FE442293F49F667522151.jpg" alt="示例图片" style="max-width: 100%; height: auto;"
+        onclick="showContent()">
+    </div>
+
+    <div id="hidden-content" style="display: none;">
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img src="./picture/长白山.jpg" alt="长白山">
+                <div class="description-container">
+                    <h2>长白山</h2>
+                    <p>长白山，位于吉林省延边朝鲜族自治州境内，是中国的著名风景区和避暑胜地。长白山主峰白云峰海拔2749米，是中国东北第一高峰。</p>
+                </div>
+            </div>
+
+
+            <div class="image-wrapper">
+                <img src="./picture/桂林.jpg" alt="桂林">
+                <div class="description-container">
+                    <h2>桂林</h2>
+                    <p>桂林：桂林位于广西壮族自治区东北部，以其独特的喀斯特地貌和秀丽的山水风光闻名于世。漓江两岸青山如黛，江水清澈见底，宛如一幅流动的山水画。桂林的山水不仅是自然的杰作，更是人文的瑰宝，吸引了无数游客前来观光游览。
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="image-wrapper">
+                <img src="./picture/丽江.jpg" alt="丽江">
+                <div class="description-container">
+                    <h2>丽江</h2>
+                    <p>丽江：丽江位于云南省西北部，以其古城、玉龙雪山和纳西族文化而闻名。丽江古城是世界文化遗产，保存完好的古建筑群和独特的纳西族文化吸引了无数游客。玉龙雪山是丽江的标志性景观，巍峨壮丽，四季景色各异。
+                    </p>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="./picture/恒山.jpg" alt="恒山">
+                <div class="description-container">
+                    <h2>恒山</h2>
+                    <p>恒山：恒山位于山西省大同市，是中国五岳之一的北岳。恒山以其险峻的山势和丰富的文化遗产而闻名，恒山悬空寺更是其标志性景观，吸引了无数游客前来探访。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/衡山.jpg" alt="衡山">
+                <div class="description-container">
+                    <h2>衡山</h2>
+                    <p>衡山：衡山位于湖南省衡阳市，是中国五岳之一的南岳。衡山以其秀丽的自然风光和深厚的文化底蕴而著称，南岳大庙和祝融峰是其标志性景观，吸引了无数游客前来朝拜和观光。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/桂林.jpg" alt="桂林">
+                <div class="description-container">
+                    <h2>桂林</h2>
+                    <p>桂林：桂林位于广西壮族自治区东北部，以其独特的喀斯特地貌和秀丽的山水风光闻名于世。漓江两岸青山如黛，江水清澈见底，宛如一幅流动的山水画。桂林的山水不仅是自然的杰作，更是人文的瑰宝，吸引了无数游客前来观光游览。
+                    </p>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="./picture/华山.jpg" alt="华山">
+                <div class="description-container">
+                    <h2>华山</h2>
+                    <p>华山：华山位于陕西省渭南市，是中国五岳之一的西岳。华山以其险峻的山势和丰富的文化遗产而闻名，华山的长空栈道更是其标志性景观，吸引了无数游客前来探访。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/黄河.jpg" alt="黄河">
+                <div class="description-container">
+                    <h2>黄河</h2>
+                    <p>黄河：黄河是中国的母亲河，流经九个省区，全长5464公里。黄河流域是中华文明的发源地，孕育了灿烂的华夏文化。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/莫高窟.jpg" alt="莫高窟">
+                <div class="description-container">
+                    <h2>莫高窟</h2>
+                    <p>莫高窟：莫高窟位于甘肃省敦煌市，是世界文化遗产，以其丰富的壁画和雕塑而闻名，被誉为“东方卢浮宫”。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/嵩山.jpg" alt="嵩山">
+                <div class="description-container">
+                    <h2>嵩山</h2>
+                    <p>嵩山：嵩山位于河南省郑州市，是中国五岳之一的中岳。嵩山以其雄伟的山势和丰富的文化遗产而闻名，少林寺更是其标志性景观。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/泰山.jpg" alt="泰山">
+                <div class="description-container">
+                    <h2>泰山</h2>
+                    <p>泰山：泰山位于山东省泰安市，是中国五岳之一的东岳。泰山以其雄伟的山势和丰富的文化遗产而闻名，被誉为“天下第一山”。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/同里.jpg" alt="同里">
+                <div class="description-container">
+                    <h2>同里</h2>
+                    <p>同里：同里位于江苏省苏州市，是中国著名的水乡古镇，以其保存完好的古建筑和独特的水乡风情而闻名。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/乌镇.jpg" alt="乌镇">
+                <div class="description-container">
+                    <h2>乌镇</h2>
+                    <p>乌镇：乌镇位于浙江省嘉兴市，是中国著名的水乡古镇，以其保存完好的古建筑和独特的水乡风情而闻名。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/西藏.jpg" alt="西藏">
+                <div class="description-container">
+                    <h2>西藏</h2>
+                    <p>西藏：西藏位于中国的西南部，以其独特的高原风光和丰富的藏族文化而闻名，是世界屋脊。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/西塘.jpg" alt="西塘">
+                <div class="description-container">
+                    <h2>西塘</h2>
+                    <p>西塘：西塘位于浙江省嘉兴市，是中国著名的水乡古镇，以其保存完好的古建筑和独特的水乡风情而闻名。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/长城.jpg" alt="长城">
+                <div class="description-container">
+                    <h2>长城</h2>
+                    <p>长城：长城是中国古代的军事防御工程，绵延万里，是世界文化遗产，被誉为“世界第八大奇迹”。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/长江.jpg" alt="长江">
+                <div class="description-container">
+                    <h2>长江</h2>
+                    <p>长江：长江是中国的第一大河，全长6300公里，流经11个省区，是中华文明的重要发源地。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/周庄.jpg" alt="周庄">
+                <div class="description-container">
+                    <h2>周庄</h2>
+                    <p>周庄：周庄位于江苏省苏州市，是中国著名的水乡古镇，以其保存完好的古建筑和独特的水乡风情而闻名。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/珠穆朗玛峰.jpg" alt="珠穆朗玛峰">
+                <div class="description-container">
+                    <h2>珠穆朗玛峰</h2>
+                    <p>珠穆朗玛峰：珠穆朗玛峰位于中国与尼泊尔的边境，是世界最高峰，海拔8848米，被誉为“世界屋脊”。</p>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="./picture/准噶尔盆地.jpg" alt="准噶尔盆地">
+                <div class="description-container">
+                    <h2>准噶尔盆地</h2>
+                    <p>准噶尔盆地：准噶尔盆地位于新疆维吾尔自治区，是中国第二大盆地，以其独特的地貌和丰富的自然资源而闻名。</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showContent () {
+                document.getElementById('hidden-content').style.display = 'block';
+            }
+        </script>
+</body>
+
+</html>

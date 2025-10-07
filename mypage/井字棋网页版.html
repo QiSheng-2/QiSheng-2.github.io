@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>井字棋</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+
+        .cell {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>井字棋</h1>
+    <p id="message"></p>
+    <div id="board"></div>
+    <button id="restart">重新开始</button>
+    <script>
+        const board = document.getElementById('board');
+        const message = document.getElementById('message');
+        const cells = [];
+        const restartButton = document.getElementById('restart');
+        let currentPlayer = 'X';
+
+        for (let i = 0; i < 9; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.addEventListener('click', handleCellClick);
+            board.appendChild(cell);
+            cells.push(cell);
+        }
+
+        function handleCellClick (event) {
+            const clickedCell = event.target;
+            if (clickedCell.textContent === '') {
+                clickedCell.textContent = currentPlayer;
+                if (checkWin(currentPlayer)) {
+                    message.textContent = `玩家 ${currentPlayer} 获胜！`;
+                    disableCells();
+                } else if (checkDraw()) {
+                    message.textContent = "平局！";
+                    disableCells();
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    message.textContent = `轮到玩家 ${currentPlayer} 了`;
+                }
+            }
+        }
+
+        function checkWin (player) {
+            const winningCombos = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            return winningCombos.some(combo => {
+                return combo.every(index => {
+                    return cells[index].textContent === player;
+                });
+            });
+        }
+
+        function checkDraw () {
+            return cells.every(cell => {
+                return cell.textContent !== '';
+            });
+        }
+
+        function disableCells () {
+            cells.forEach(cell => {
+                cell.removeEventListener('click', handleCellClick);
+            });
+        }
+
+        restartButton.addEventListener('click', restartGame);
+
+        function restartGame () {
+            cells.forEach(cell => {
+                cell.textContent = '';
+                cell.addEventListener('click', handleCellClick);
+            });
+            currentPlayer = 'X';
+            message.textContent = `轮到玩家 ${currentPlayer} 了`;
+        }
+    </script>
+</body>
+
+</html>

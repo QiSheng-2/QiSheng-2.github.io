@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Boxes Layout</title>
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/todolist.css">
+
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .left-box {
+            width: 70%;
+            /* background-color: lightblue; */
+            padding: 20px;
+            margin-right: 10px;
+        }
+
+        .right-boxes {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+        }
+
+        .right-box {
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article_container {
+            width: 80%;
+            height: 150px;
+            margin: 20px auto;
+            background-color: hsl(0, 0%, 96%);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #000000;
+        }
+
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-box">
+            <!-- <div class="article_container">
+                <h2>习概资料</h2>
+                <a href="./article1.html" style="text-decoration: none;">整理笔记</a>
+            </div> -->
+            <div class="article_container">
+                <h2>数分资料</h2>
+                <a href="https://www.bilibili.com/video/BV1zQ4y1B7VP/" style="text-decoration: none;">教学课程 宋浩</a>
+                <br>
+                <a href="https://www.geogebra.org/graphing"> geogebra 计算器</a>
+            </div>
+            <div class="article_container">
+                <h2>高代资料</h2>
+                <a href="https://www.bilibili.com/video/BV1ys411472E/" style="text-decoration: none;">3Blue1Brown</a>
+                <br>
+            </div>
+            <div class="article_container">
+                <h2>程设资料</h2>
+                <a href="https://www.luogu.com.cn/" style="text-decoration: none;">洛谷</a>
+                <br>
+            </div>
+        </div>
+        <div class="right-boxes">
+            <div class="right-box">
+                <div class="card" onclick="showNextWord()">
+                    <div class="words" id="wordsContainer">
+                        <!-- 数据库 -->
+                        <div class="word active">alter <br><br> v. 改变，改动，变更 </div>
+                        <div class="word">burst <br><br> vi.,n. 突然发生，爆裂 </div>
+                        <div class="word">dispose <br><br> vi. 除掉；处置；解决；处理(of) </div>
+                        <div class="word">blast <br><br> n. 爆炸；气流 vi. 炸，炸掉 </div>
+                        <div class="word">consume <br><br> v. 消耗，耗尽 </div>
+                        <div class="word">split <br><br> v. 劈开；割裂；分裂 a.裂开的 </div>
+                        <div class="word">spit <br><br> v. 吐（唾液等）；唾弃 </div>
+                        <div class="word">spill <br><br> v. 溢出，溅出，倒出 </div>
+                        <div class="word">slip <br><br> v. 滑动，滑落；忽略 </div>
+                        <div class="word">slide <br><br> v. 滑动，滑落 n. 滑动；滑面；幻灯片 </div>
+                        <div class="word">bacteria <br><br> n. 细菌 </div>
+                        <div class="word">breed <br><br> n. 种，品种 v. 繁殖，产仔 </div>
+                        <div class="word">budget <br><br> n. 预算 v. 编预算，作安排 </div>
+                        <div class="word">candidate <br><br> n. 候选人 </div>
+                        <div class="word">campus <br><br> n. 校园 </div>
+                        <div class="word">liberal <br><br> a. 慷慨的；丰富的；自由的 </div>
+                        <div class="word">transform <br><br> v. 转变，变革；变换 </div>
+                        <div class="word">transmit <br><br> v. 传播，播送；传递 </div>
+                        <div class="word">transplant <br><br> v. 移植 </div>
+                        <div class="word">transport <br><br> vt. 运输，运送 n. 运输，运输工具 </div>
+                        <div class="word">shift <br><br> v. 转移；转动；转变 </div>
+                        <div class="word">vary <br><br> v. 变化，改变；使多样化 </div>
+                        <div class="word">vanish <br><br> vi. 消灭，不见 </div>
+                        <div class="word">swallow <br><br> v. 吞下，咽下 n. 燕子 </div>
+                        <div class="word">suspicion <br><br> n. 怀疑，疑心 </div>
+                        <div class="word">suspicious <br><br> a. 怀疑的，可疑的 </div>
+                        <div class="word">mild <br><br> a. 温暖的，暖和的；温柔的，味淡的 </div>
+                        <div class="word">tender <br><br> a. 温柔的；脆弱的 </div>
+                        <div class="word">nuisance <br><br> n. 损害，妨害，讨厌（的人或事物） </div>
+                        <div class="word">insignificant <br><br> a. 无意义的，无足轻重的；无价值的 </div>
+                        <div class="word">accelerate <br><br> vt. 加速，促进 </div>
+                        <div class="word">absolute <br><br> a. 绝对的，无条件的；完全的 </div>
+                        <div class="word">boundary <br><br> n. 分界线，边界 </div>
+                        <div class="word">brake <br><br> n. 刹车，制动器 v. 刹住（车） </div>
+                        <div class="word">catalog <br><br> n. 目录（册） v. 编目 </div>
+                        <div class="word">vague <br><br> a. 模糊的，不明确的 </div>
+                        <div class="word">vain <br><br> n. 徒劳，白费 </div>
+                        <div class="word">extinct <br><br> a. 绝灭的，熄灭的 </div>
+                        <div class="word">extraordinary <br><br> a. 不平常的，特别的，非凡的 </div>
+                        <div class="word">extreme <br><br> a. 极度的，极端的 n. 极端，过分 </div>
+                        <div class="word">agent <br><br> n. 代理人，代理商；动因，原因 </div>
+                        <div class="word">alcohol <br><br> n. 含酒精的饮料，酒精 </div>
+                        <div class="word">appeal <br><br> n./vi. 呼吁，恳求 </div>
+                        <div class="word">appreciate <br><br> vt. 重视，赏识，欣赏 </div>
+                        <div class="word">approve <br><br> v. 赞成，同意，批准 </div>
+                        <div class="word">stimulate <br><br> vt. 刺激，激励 </div>
+                        <div class="word">acquire <br><br> vt. 取得，获得；学到 </div>
+                        <div class="word">accomplish <br><br> vt .完成，到达；实行 </div>
+                        <div class="word">network <br><br> n. 网状物；广播网，电视网；网络 </div>
+                        <div class="word">tide <br><br> n. 潮汐；潮流 </div>
+                        <div class="word">tidy <br><br> a. 整洁的，整齐的 </div>
+                        <div class="word">trace <br><br> vt. 追踪，找到 n. 痕迹，踪迹 </div>
+                        <div class="word">torture <br><br> n./vt. 拷打，折磨 </div>
+                        <div class="word">wander <br><br> vi. 漫游，闲逛 </div>
+                        <div class="word">wax <br><br> n. 蜡 </div>
+                        <div class="word">weave <br><br> v. 织，编 </div>
+                        <div class="word">preserve <br><br> v. 保护，保存，保持，维持 </div>
+                        <div class="word">highlight <br><br> vt. 强调，突出 </div>
+                        <div class="word">hence <br><br> ad. 因此，所以；今后，从此 </div>
+                        <div class="word">herd <br><br> n. 兽群，牧群 </div>
+                        <div class="word">abuse <br><br> v. 滥用，虐待；谩骂 </div>
+                        <div class="word">academic <br><br> a. 学术的；高等院校的；研究院的 </div>
+                        <div class="word">academy <br><br> n. （高等）专科院校；学会 </div>
+                        <div class="word">battery <br><br> n. 电池（组） </div>
+                        <div class="word">barrier <br><br> n. 障碍；棚栏 </div>
+                        <div class="word">cargo <br><br> n. （船、飞机等装载的）货物 </div>
+                        <div class="word">career <br><br> n. 生涯，职业 </div>
+                        <div class="word">vessel <br><br> n. 船舶；容器，器皿；血管 </div>
+                        <div class="word">vertical <br><br> a. 垂直的 </div>
+                        <div class="word">oblige <br><br> v. 迫使，责成；使感激 </div>
+                        <div class="word">obscure <br><br> a. 阴暗，模糊 </div>
+                        <div class="word">extent <br><br> n. 程度，范围，大小，限度 </div>
+                        <div class="word">exterior <br><br> n. 外部，外表 a. 外部的，外表的 </div>
+                        <div class="word">external <br><br> a. 外部的，外表的，外面的 </div>
+                        <div class="word">petrol <br><br> n. 汽油 </div>
+                        <div class="word">petroleum <br><br> n. 石油 </div>
+                        <div class="word">delay <br><br> vt./n. 推迟，延误，耽搁 </div>
+                        <div class="word">decay <br><br> vi. 腐烂，腐朽 </div>
+                        <div class="word">decent <br><br> a. 像样的，体面的 </div>
+                        <div class="word">route <br><br> n. 路；路线；航线 </div>
+                        <div class="word">ruin <br><br> v. 毁坏，破坏 n. 毁灭，[pl.]废墟 </div>
+                        <div class="word">sake <br><br> n. 缘故，理由 </div>
+                        <div class="word">satellite <br><br> n. 卫星 </div>
+                        <div class="word">scale <br><br> n. 大小，规模；等级；刻度 </div>
+                        <div class="word">temple <br><br> n. 庙宇 </div>
+                        <div class="word">tedious <br><br> a. 乏味道，单调的， </div>
+                        <div class="word">tend <br><br> vi.易于，趋向 </div>
+                        <div class="word">tendency <br><br> n.趋向，趋势 </div>
+                        <div class="word">ultimate <br><br> a. 极端的，最大的，最终的 n. 极端 </div>
+                        <div class="word">undergo <br><br> v. 经历，遭受 </div>
+                        <div class="word">abundant <br><br> a. 丰富的，充裕的，大量的 </div>
+                        <div class="word">adopt <br><br> v. 收养；采用；采纳 </div>
+                        <div class="word">adapt <br><br> vi. 适应，适合；改编，改写 vt. 使适应 </div>
+                        <div class="word">bachelor <br><br> n. 学士，学士学位；单身汉 </div>
+                        <div class="word">casual <br><br> a. 偶然的，碰巧的；临时的；非正式的 </div>
+                        <div class="word">trap <br><br> n. 陷阱，圈套 v. 设陷阱捕捉 </div>
+                        <div class="word">vacant <br><br> a. 空的，未占用的 </div>
+                        <div class="word">vacuum <br><br> n. 真空，真空吸尘器 </div>
+                        <div class="word">oral <br><br> a. 口头的，口述的，口的 </div>
+                        <div class="word">optics <br><br> n. （单、复数同形）光学 </div>
+                        <div class="word">organ <br><br> n. 器官，风琴 </div>
+                        <div class="word">excess <br><br> n. 过分，过量，过剩 </div>
+                        <div class="word">expel <br><br> v. 驱逐，开除，赶出 </div>
+                        <div class="word">expend <br><br> v. 消费 </div>
+                        <div class="word">expenditure <br><br> n. 支出，消费；经费 </div>
+                        <div class="word">expense <br><br> n. 开销，费用 </div>
+                        <div class="word">expensive <br><br> a. 花钱多的；价格高贵的 </div>
+                        <div class="word">expand <br><br> v. 扩大，扩张；展开，膨胀 </div>
+                        <div class="word">expansion <br><br> n. 扩大，扩充；发展，膨胀 </div>
+                        <div class="word">private <br><br> a. 私人的，个人的 </div>
+                        <div class="word">individual <br><br> a. 个别的，单独的 n. 个人，个体 </div>
+                        <div class="word">personal <br><br> a. 个人的，私人的；亲自的 </div>
+                        <div class="word">personnel <br><br> n. [总称]人员，员工；人事部门 </div>
+                        <div class="word">the <br><br> Pacific Ocean 太平洋 </div>
+                        <div class="word">the <br><br> Atlantic Ocean 大西洋 </div>
+                        <div class="word">the <br><br> Arctic Ocean 北冰洋 </div>
+                        <div class="word">the <br><br> Antarctic Ocean 南冰洋 </div>
+                        <div class="word">grant <br><br> vt. 授予，同意，准予 </div>
+                        <div class="word">grand <br><br> a. 宏伟大，壮丽的，重大的 </div>
+                        <div class="word">invade <br><br> v. 侵入，侵略，侵袭 </div>
+                        <div class="word">acid <br><br> n. 酸，酸性物质 a. 酸的；尖刻的 </div>
+                        <div class="word">acknowledge <br><br> v. 承认；致谢 </div>
+                        <div class="word">balcony <br><br> n. 阳台 </div>
+                        <div class="word">calculate <br><br> vt. 计算，核算 </div>
+                        <div class="word">calendar <br><br> n. 日历，月历 </div>
+                        <div class="word">optimistic <br><br> a. 乐观 </div>
+                        <div class="word">optional <br><br> a. 可以任选的，非强制的 </div>
+                        <div class="word">outstanding <br><br> a. 杰出的，突出的，显著的 </div>
+                        <div class="word">export <br><br> n. 出口（物） v. 出口，输出 </div>
+                        <div class="word">import <br><br> n. 进口（物） v. 进口，输入 </div>
+                        <div class="word">impose <br><br> vt. 把...加强(on)；采用，利用 </div>
+                        <div class="word">religion <br><br> n. 宗教，宗教信仰 </div>
+                        <div class="word">religious <br><br> a. 宗教的 </div>
+                        <div class="word">victim <br><br> n. 牺牲品，受害者 </div>
+                        <div class="word">video <br><br> n. 电视，视频 a. 电视的，录像的 </div>
+                        <div class="word">videotape <br><br> n. 录像磁带 v. 把...录在录像带上 </div>
+                        <div class="word">offend <br><br> v. 冒犯，触犯 </div>
+                        <div class="word">bother <br><br> v. 打搅，麻烦 </div>
+                        <div class="word">interfere <br><br> v. 干涉，干扰，妨碍 </div>
+                        <div class="word">internal <br><br> a. 内部的，国内的 </div>
+                        <div class="word">beforehand <br><br> ad. 预先，事先 </div>
+                        <div class="word">racial <br><br> a. 人种的种族的 </div>
+                        <div class="word">radiation <br><br> n. 放射物，辐射 </div>
+                        <div class="word">radical <br><br> a.根本的；激进的 </div>
+                        <div class="word">range <br><br> n. 幅度，范围 v. （在某范围内）变动 </div>
+                        <div class="word">wonder <br><br> n. 惊奇，奇迹 v. 想知道，对...感到疑惑 </div>
+                        <div class="word">isolate <br><br> vt. 使隔离，使孤立 </div>
+                        <div class="word">issue <br><br> n. 问题，争论点；发行，（报刊）一期 </div>
+                        <div class="word">hollow <br><br> a. 空的，中空的，空虚道 </div>
+                        <div class="word">hook <br><br> n. 钩 vt. 钩住 </div>
+                        <div class="word">adequate <br><br> a. 适当地；足够 </div>
+                        <div class="word">adhere <br><br> vi. 粘附，附着；遵守，坚持 </div>
+                        <div class="word">ban <br><br> vt. 取缔，禁止 </div>
+                        <div class="word">capture <br><br> vt. 俘虏，捕获 </div>
+                        <div class="word">valid <br><br> a. 有效的，有根据的；正当的 </div>
+                        <div class="word">valley <br><br> n. 山谷，峡谷 </div>
+                        <div class="word">consistent <br><br> a. 坚固定；一致的，始终如一的 </div>
+                        <div class="word">continuous <br><br> a. 继续的，连续（不断）的 </div>
+                        <div class="word">continual <br><br> a. 不断地，频繁的 </div>
+                        <div class="word">explode <br><br> v. 爆炸；爆发；激增 </div>
+                        <div class="word">exploit <br><br> v. 剥削；利用，开采 </div>
+                        <div class="word">explore <br><br> v. 勘探 </div>
+                        <div class="word">explosion <br><br> n. 爆炸；爆发；激增 </div>
+                        <div class="word">explosive <br><br> a. 爆炸的；极易引起争论的 </div>
+                        <div class="word">remote <br><br> a. 遥远的，偏僻的 </div>
+                        <div class="word">removal <br><br> n. 除去，消除 </div>
+                        <div class="word">render <br><br> vt. 使得，致使 </div>
+                        <div class="word">precaution <br><br> n. 预防，防备，警惕 </div>
+                        <div class="word">idle <br><br> a. 懒散的，无所事事的 </div>
+                        <div class="word">identify <br><br> vt. 认出，鉴定 </div>
+                        <div class="word">identify <br><br> n. 身份；个性，特性 </div>
+                        <div class="word">poverty <br><br> n. 贫穷 </div>
+                        <div class="word">resistant <br><br> a. (to)抵抗的，抗...的，耐...的 </div>
+                        <div class="word">resolve <br><br> vt. 解决；决定，决意 </div>
+                        <div class="word">barrel <br><br> n. 桶 </div>
+                        <div class="word">bargain <br><br> n. 便宜货 vi. 讨价还价 </div>
+                        <div class="word">coarse <br><br> a. 粗的，粗糙的，粗劣的 </div>
+                        <div class="word">coach <br><br> n. 教练；长途公共汽车 </div>
+                        <div class="word">code <br><br> n. 准则，法规，密码 </div>
+                        <div class="word">coil <br><br> n. 线圈 v. 卷，盘绕 </div>
+                        <div class="word">adult <br><br> n. 成年人 </div>
+                        <div class="word">advertise <br><br> v. 为...做广告 </div>
+                        <div class="word">advertisement <br><br> n. 广告 </div>
+                        <div class="word">agency <br><br> n. 代理商，经销商 </div>
+                        <div class="word">focus <br><br> v. （使）聚集 n. 焦点，中心，聚焦 </div>
+                        <div class="word">forbid <br><br> vt. 不许，禁止 </div>
+                        <div class="word">debate <br><br> n./v. 辩论，争论 </div>
+                        <div class="word">debt <br><br> n. 欠债 </div>
+                        <div class="word">decade <br><br> n. 十年 </div>
+                        <div class="word">enclose <br><br> vt. 围住；把...装入信封 </div>
+                        <div class="word">encounter <br><br> vt./n. 遭遇，遭到 </div>
+                        <div class="word">globe <br><br> n. 地球，世界；地球仪 </div>
+                        <div class="word">global <br><br> a. 全球的；总的 </div>
+                        <div class="word">scan <br><br> vt. 细看；扫描；浏览 </div>
+                        <div class="word">scandal <br><br> n. 丑事，丑闻 </div>
+                        <div class="word">significance <br><br> n. 意义；重要性 </div>
+                        <div class="word">subsequent <br><br> a. 随后的，后来的 </div>
+                        <div class="word">virtue <br><br> n. 美德，优点 </div>
+                        <div class="word">virtual <br><br> a. 实际上的，事实上的 </div>
+                        <div class="word">orient <br><br> vt. 使适应，(to,toward)使朝向 n. 东方 </div>
+                        <div class="word">portion <br><br> n. 一部分 </div>
+                        <div class="word">target <br><br> n. 目标，靶子 vt. 瞄准 </div>
+                        <div class="word">portable <br><br> a. 手提式的 </div>
+                        <div class="word">decline <br><br> v. 拒绝，谢绝；下降 </div>
+                        <div class="word">illusion <br><br> n. 错觉 </div>
+                        <div class="word">likelihood <br><br> n. 可能，可能性 </div>
+                        <div class="word">stripe <br><br> n. 条纹 </div>
+                        <div class="word">emphasize <br><br> vt. 强调，着重 </div>
+                        <div class="word">emotion <br><br> n. 情感，感情 </div>
+                        <div class="word">emotional <br><br> a. 感情的，情绪（上）的 </div>
+                        <div class="word">awful <br><br> a. 极坏的，威严的，可怕的 </div>
+                        <div class="word">awkward <br><br> a. 笨拙的，棘手的 </div>
+                        <div class="word">clue <br><br> n. 线索，提示 </div>
+                        <div class="word">collision <br><br> n. 碰撞，冲突 </div>
+                        <div class="word">device <br><br> n. 装置，设备 </div>
+                        <div class="word">devise <br><br> vt. 发明，策划，想出 </div>
+                        <div class="word">inevitable <br><br> a. 不可避免的 </div>
+                        <div class="word">naval <br><br> a. 海军的 </div>
+                        <div class="word">navigation <br><br> n. 航行 </div>
+                        <div class="word">necessity <br><br> n. 必需品；必要性 </div>
+                        <div class="word">previous <br><br> a. 先，前，以前的 </div>
+                        <div class="word">provision <br><br> n. [pl.]给养，口粮；准备，设备，装置 </div>
+                        <div class="word">pursue <br><br> vt. 追逐；追求；从事，进行 </div>
+                        <div class="word">stale <br><br> a. 不新鲜的，陈腐的 </div>
+                        <div class="word">substitute <br><br> n. 代用品 vt. 代替 </div>
+                        <div class="word">deserve <br><br> vt. 应受，应得，值得 </div>
+                        <div class="word">discrimination <br><br> n. 歧视；辨别力 </div>
+                        <div class="word">professional <br><br> a. 职业的，专门的 </div>
+                        <div class="word">secure <br><br> a. 安全的，可靠的 </div>
+                        <div class="word">security <br><br> n. 安全，保障 </div>
+                        <div class="word">scratch <br><br> v./n. 抓，搔，扒 </div>
+                        <div class="word">talent <br><br> n. 才能，天资；人才 </div>
+                        <div class="word">insurance <br><br> n. 保险，保险费 </div>
+                        <div class="word">insure <br><br> vt. 给...保险，保证，确保 </div>
+                        <div class="word">nevertheless <br><br> ad. 仍然，然而，不过 </div>
+                        <div class="word">neutral <br><br> a. 中立的，中性的 </div>
+                        <div class="word">spot <br><br> n. 地点；斑点 vt. 认出，发现；玷污 </div>
+                        <div class="word">spray <br><br> v. 喷，（使）溅散 </div>
+                        <div class="word">medium <br><br> a. 中等的，适中的 n. 媒介物，新闻媒介 </div>
+                        <div class="word">media <br><br> n. 新闻传媒 </div>
+                        <div class="word">auxiliary <br><br> a. 辅助的，备用的 </div>
+                        <div class="word">automatic <br><br> a. 自动的 </div>
+                        <div class="word">compete <br><br> vi. 竞争，比赛 </div>
+                        <div class="word">competent <br><br> a. 有能力的，能胜任的 </div>
+                        <div class="word">competition <br><br> n. 竞争，比赛 </div>
+                        <div class="word">distribute <br><br> vt. 分发 </div>
+                        <div class="word">disturb <br><br> vt. 打搅，妨碍 </div>
+                        <div class="word">infer <br><br> v. 推论，推断 </div>
+                        <div class="word">integrate <br><br> v. (into,with)（使）成为一体，（使）合并 </div>
+                        <div class="word">moist <br><br> a. 潮湿 </div>
+                        <div class="word">moisture <br><br> n. 潮湿 </div>
+                        <div class="word">promote <br><br> vt. 促进；提升 </div>
+                        <div class="word">region <br><br> n. 地区；范围；幅度 </div>
+                        <div class="word">register <br><br> v./n.登记，注册 </div>
+                        <div class="word">stable <br><br> a. 稳定的 </div>
+                        <div class="word">sophisticated <br><br> a. 老于世故的，老练的；很复杂的 </div>
+                        <div class="word">splendid <br><br> a. 极好的，壮丽的，辉煌的 </div>
+                        <div class="word">cancel <br><br> vt. 取消，废除 </div>
+                        <div class="word">variable <br><br> a. 易变的，可变的 </div>
+                        <div class="word">prospect <br><br> n. 前景，前途；景象 </div>
+                        <div class="word">prosperity <br><br> n.兴旺，繁荣 </div>
+                        <div class="word">aspect <br><br> n. 方面；朝向；面貌 </div>
+                        <div class="word">cope <br><br> vi. (with)（成功地）应付，处理 </div>
+                        <div class="word">core <br><br> n. 果心，核心 </div>
+                        <div class="word">maintain <br><br> vt. 维持，保持；坚持，主张 </div>
+                        <div class="word">mainland <br><br> n. 大陆 </div>
+                        <div class="word">discipline <br><br> n. 纪律；惩罚；学科 </div>
+                        <div class="word">domestic <br><br> a. 本国的，国内的；家用的；家庭的 </div>
+                        <div class="word">constant <br><br> a. 不变的，恒定的 n. 常数 </div>
+                        <div class="word">cliff <br><br> n. 悬崖，峭壁 </div>
+                        <div class="word">authority <br><br> n. 权威；当局 </div>
+                        <div class="word">audio <br><br> a. 听觉 </div>
+                        <div class="word">attitude <br><br> n. 态度 </div>
+                        <div class="word">community <br><br> n. 社区，社会 </div>
+                        <div class="word">commit <br><br> vt. 犯（错误，罪行等），干（坏事等） </div>
+                        <div class="word">comment <br><br> n./vt. 评论 </div>
+                        <div class="word">distinguish <br><br> vt. 区分，辨别 </div>
+                        <div class="word">distress <br><br> n. 痛苦，悲伤 vt. 使痛苦 </div>
+                        <div class="word">facility <br><br> n. [pl.] 设备，设施；便利，方便 </div>
+                        <div class="word">faculty <br><br> n. 能力，技能；系，学科，学院；全体教员 </div>
+                        <div class="word">mixture <br><br> n. 混合，混合物 </div>
+                        <div class="word">mood <br><br> n. 心情，情绪；语气 </div>
+                        <div class="word">moral <br><br> a. 道德上的，有道德的 </div>
+                        <div class="word">prominent <br><br> a. 突出的 </div>
+                        <div class="word">substance <br><br> n. 物质；实质 </div>
+                        <div class="word">substantial <br><br> a. 可观的；牢固的；实质的 </div>
+                        <div class="word">prompt <br><br> vt. 促使 a. 敏捷的，及时的 </div>
+                        <div class="word">vivid <br><br> a. 生动的 </div>
+                        <div class="word">vocabulary <br><br> n. 词汇（量）；词汇表 </div>
+                        <div class="word">venture <br><br> n. 风险投资，风险项目 v. 冒险；取于 </div>
+                        <div class="word">version <br><br> n. 版本，译本；说法 </div>
+                        <div class="word">waist <br><br> n. 腰，腰部 </div>
+                        <div class="word">weld <br><br> v./n. 焊接 </div>
+                        <div class="word">yawn <br><br> vi. 打哈欠 </div>
+                        <div class="word">yield <br><br> vi. (to)屈服于；让出，放弃 n. 产量 </div>
+                        <div class="word">zone <br><br> n. 地区，区域 </div>
+                        <div class="word">strategy <br><br> n. 战略，策略 </div>
+                        <div class="word">strategic <br><br> a. 战略（上）的，关键的 </div>
+                        <div class="word">tense <br><br> a. 紧张的 v. 拉紧 n. 时态 </div>
+                        <div class="word">tension <br><br> n. 紧张（状态），张力 </div>
+                        <div class="word">avenue <br><br> n. 林荫道，大街 </div>
+                        <div class="word">available <br><br> a. 现成可用的；可得到的 </div>
+                        <div class="word">comparable <br><br> a. (with,to)可比较的，类似的 </div>
+                        <div class="word">comparative <br><br> a. 比较的，相对的 </div>
+                        <div class="word">dash <br><br> vi. 猛冲，飞奔 </div>
+                        <div class="word">data <br><br> n. 数据，资料 </div>
+                        <div class="word">dive <br><br> vi. 跳水，潜水 </div>
+                        <div class="word">diverse <br><br> a. 不同的，多种多样的 </div>
+                        <div class="word">entitle <br><br> vt. 给...权利，给...资格 </div>
+                        <div class="word">regulate <br><br> vt. 管理，调节 </div>
+                        <div class="word">release <br><br> vt./n. 释放，排放；解释解脱 </div>
+                        <div class="word">exaggerate <br><br> v. 夸大，夸张 </div>
+                        <div class="word">evil <br><br> a. 邪恶的，坏的 </div>
+                        <div class="word">shrink <br><br> vi. 起皱，收缩；退缩 </div>
+                        <div class="word">subtract <br><br> v. 减（去） </div>
+                        <div class="word">suburb <br><br> n. 市郊 </div>
+                        <div class="word">subway <br><br> n. 地铁 </div>
+                        <div class="word">survey <br><br> n./vt. 调查，勘测 </div>
+                        <div class="word">wealthy <br><br> a. 富裕的 </div>
+                        <div class="word">adjust <br><br> v. 调整，调节 </div>
+                        <div class="word">attach <br><br> vt. 系，贴；使附属 </div>
+                        <div class="word">profit <br><br> n. 利润，益处；v. 有益于，有利于 </div>
+                        <div class="word">profitable <br><br> a. 有利可图的 </div>
+                        <div class="word">slope <br><br> n. 斜坡，斜面 </div>
+                        <div class="word">reinforce <br><br> vt. 增强，加强 </div>
+                        <div class="word">reject <br><br> vt. 拒绝 </div>
+                        <div class="word">fatal <br><br> a. 致命的；重大的 </div>
+                        <div class="word">fate <br><br> n. 命运 </div>
+                        <div class="word">humble <br><br> a. 谦逊的；谦虚的 </div>
+                        <div class="word">illegal <br><br> a. 不合法的，非法的 </div>
+                        <div class="word">award <br><br> vt. 授予，判给 n. 奖品，奖金 </div>
+                        <div class="word">aware <br><br> a. 意识到 </div>
+                        <div class="word">column <br><br> n. 柱，圆柱；栏，专栏 </div>
+                        <div class="word">comedy <br><br> n. 喜剧 </div>
+                        <div class="word">dumb <br><br> a. 哑的；沉默的 </div>
+                        <div class="word">dump <br><br> vt. 倾卸，倾倒 </div>
+                        <div class="word">deaf <br><br> a. 聋的；不愿听的 </div>
+                        <div class="word">decorate <br><br> vt. 装饰，装璜 </div>
+                        <div class="word">principal <br><br> a. 最重要的 n. 负责人，校长 </div>
+                        <div class="word">principle <br><br> n. 原则，原理 </div>
+                        <div class="word">prior <br><br> a. 优先的，在前的 </div>
+                        <div class="word">priority <br><br> n. 优先，重点 </div>
+                        <div class="word">prohibit <br><br> vt. 禁止，不准 </div>
+                        <div class="word">remarkable <br><br> a. 值得注意的，异常的，非凡的 </div>
+                        <div class="word">remedy <br><br> n./vt. 补救，医治，治疗 </div>
+                        <div class="word">repetition <br><br> n. 重复，反复 </div>
+                        <div class="word">vain <br><br> a. 徒劳的，无效的 </div>
+                        <div class="word">undertake <br><br> vt. 承担，着手做；同意，答应 </div>
+                        <div class="word">unique <br><br> a. 唯一的，独特的 </div>
+                        <div class="word">obstacle <br><br> n. 障碍（物），妨碍 </div>
+                        <div class="word">odd <br><br> a. 奇特的，古怪的；奇数的 </div>
+                        <div class="word">omit <br><br> vt. 省略 </div>
+                        <div class="word">opponent <br><br> n. 敌手，对手 </div>
+                        <div class="word">opportunity <br><br> n. 机会，时机 </div>
+                        <div class="word">orchestra <br><br> n. 管弦乐队 </div>
+                        <div class="word">semester <br><br> n. 学期；半年 </div>
+                        <div class="word">semiconductor <br><br> n. 半导体 </div>
+                        <div class="word">seminar <br><br> n. 研讨会 </div>
+                        <div class="word">terminal <br><br> a. 末端的，极限的 n. 终点 </div>
+                        <div class="word">territory <br><br> n. 领土 </div>
+                        <div class="word">approximate <br><br> a. 大概的，大约 v. 近似 </div>
+                        <div class="word">arbitrary <br><br> a. 随意的，未断的 </div>
+                        <div class="word">architect <br><br> n. 建筑师 </div>
+                        <div class="word">architecture <br><br> n. 建筑学 </div>
+                        <div class="word">biology <br><br> n. 生物学 </div>
+                        <div class="word">geography <br><br> n. 地理（学） </div>
+                        <div class="word">geology <br><br> n. 地质学 </div>
+                        <div class="word">geometry <br><br> n. 几何（学） </div>
+                        <div class="word">arithmetic <br><br> n. 算术 </div>
+                        <div class="word">algebra <br><br> n. 代数 </div>
+                        <div class="word">entertainment <br><br> n. 娱乐；招待，款待 </div>
+                        <div class="word">enthusiasm <br><br> n. 热情，热心 </div>
+                        <div class="word">entry <br><br> n. 进入，入口处；参赛的人（或物） </div>
+                        <div class="word">environment <br><br> n. 环境 </div>
+                        <div class="word">episode <br><br> n. 插曲，片段 </div>
+                        <div class="word">equation <br><br> n. 方程（式） </div>
+                        <div class="word">restrain <br><br> vt. 阻止，抑制 </div>
+                        <div class="word">restraint <br><br> n. 抑制，限制 </div>
+                        <div class="word">resume <br><br> v. （中断后）重新开始 </div>
+                        <div class="word">severe <br><br> a. 严重的 </div>
+                        <div class="word">sexual <br><br> a. 性的 </div>
+                        <div class="word">simplicity <br><br> n. 简单；朴素 </div>
+                        <div class="word">simplify <br><br> vt. 简化 </div>
+                        <div class="word">sorrow <br><br> n. 悲哀，悲痛 </div>
+                        <div class="word">stuff <br><br> n. 原料，材料 vt. 填进，塞满 </div>
+                        <div class="word">temporary <br><br> a. 暂时的，临时的 </div>
+                        <div class="word">temptation <br><br> n. 诱惑，引诱 </div>
+                        <div class="word">terror <br><br> n. 恐怖 </div>
+                        <div class="word">thrust <br><br> v. 挤，推，插 </div>
+                        <div class="word">treaty <br><br> n. 条约，协定 </div>
+                        <div class="word">arise <br><br> vi. 产生，出现，发生；起身 </div>
+                        <div class="word">arouse <br><br> vt. 引起，激起；唤醒 </div>
+                        <div class="word">burden <br><br> n. 重担，负荷 </div>
+                        <div class="word">bureau <br><br> n. 局，办事处 </div>
+                        <div class="word">marvelous <br><br> a. 奇迹般的，惊人的 </div>
+                        <div class="word">massive <br><br> a. 大的，大量的，大块的 </div>
+                        <div class="word">mature <br><br> a. 成熟的 </div>
+                        <div class="word">maximum <br><br> a. 最高的，最大的 </div>
+                        <div class="word">minimum <br><br> a. 最低的，最小的 </div>
+                        <div class="word">nonsense <br><br> n. 胡说，冒失的行动 </div>
+                        <div class="word">nuclear <br><br> a. 核子的，核能的 </div>
+                        <div class="word">nucleus <br><br> n. 核 </div>
+                        <div class="word">retail <br><br> n./v./ad. 零售 </div>
+                        <div class="word">retain <br><br> vt. 保留，保持 </div>
+                        <div class="word">restrict <br><br> vt. 限制，约束 </div>
+                        <div class="word">sponsor <br><br> n. 发起者，主办者 vt. 发起，主办，资助 </div>
+                        <div class="word">spur <br><br> n./vt. 刺激，激励 </div>
+                        <div class="word">triumph <br><br> n. 胜利，成功 </div>
+                        <div class="word">tuition <br><br> n. 学费 </div>
+                        <div class="word">twist <br><br> vt. 使缠绕；转动；扭歪 </div>
+                        <div class="word">undergraduate <br><br> n. 大学肄业生 </div>
+                        <div class="word">universal <br><br> a. 普遍的，通用的；宇宙的 </div>
+                        <div class="word">universe <br><br> n. 宇宙 </div>
+                        <div class="word">via <br><br> prep. 经由，经过，通过 </div>
+                        <div class="word">vibrate <br><br> v. 振动，摇摆 </div>
+                        <div class="word">virus <br><br> n. 病毒 </div>
+                        <div class="word">voluntary <br><br> a. 自愿的 </div>
+                        <div class="word">volunteer <br><br> n. 志愿者 v. 自愿（做） </div>
+                        <div class="word">vote <br><br> v. 选举 n. 选票 </div>
+                        <div class="word">wagon <br><br> n. 四轮马车，铁路货车 </div>
+                        <div class="word">appoint <br><br> vt. 任命，委派 </div>
+                        <div class="word">approach <br><br> v. 靠近，接近 n. 途径，方式 </div>
+                        <div class="word">appropriate <br><br> a. 适当的 </div>
+                        <div class="word">bunch <br><br> n. 群，伙；束，串 </div>
+                        <div class="word">bundle <br><br> n. 捆，包，束 vt. 收集，归拢 </div>
+                        <div class="word">ceremony <br><br> n. 典礼，仪式 </div>
+                        <div class="word">chaos <br><br> n. 混乱，紊乱 </div>
+                        <div class="word">discount <br><br> n. （价格）折扣 </div>
+                        <div class="word">display <br><br> n./vt. 陈列，展览 </div>
+                        <div class="word">equivalent <br><br> a. 相等的 a. 相等物 </div>
+                        <div class="word">erect <br><br> a. 竖直的 v. 建造，竖立 </div>
+                        <div class="word">fax <br><br> n./vt. 传真 </div>
+                        <div class="word">ferfile <br><br> a. 肥沃的；多产的 </div>
+                        <div class="word">fertilizer <br><br> n. 肥料 </div>
+                        <div class="word">grateful <br><br> a. 感激的 </div>
+                        <div class="word">gratitude <br><br> n. 感激 </div>
+                        <div class="word">horror <br><br> n. 恐怖 </div>
+                        <div class="word">horrible <br><br> a. 可怕的 </div>
+                        <div class="word">Internet <br><br> n. 国际互联网，因特网 </div>
+                        <div class="word">interpret <br><br> v. 翻译，解释 </div>
+                        <div class="word">interpretation <br><br> n. 解释，说明 </div>
+                        <div class="word">jungle <br><br> n. 丛林，密林 </div>
+                        <div class="word">knot <br><br> n. 结 vt. 把...打成结 </div>
+                        <div class="word">leak <br><br> v. 漏，渗出 </div>
+                        <div class="word">lean <br><br> vi. 倾斜，倚，靠 </div>
+                        <div class="word">leap <br><br> vi. 跳跃 </div>
+                        <div class="word">modify <br><br> vt. 修改 </div>
+                        <div class="word">nylon <br><br> n. 尼龙 </div>
+                        <div class="word">onion <br><br> n. 洋葱 </div>
+                        <div class="word">powder <br><br> n. 粉末 </div>
+                        <div class="word">applicable <br><br> a. 可应用的，适当的 </div>
+                        <div class="word">applicant <br><br> n. 申请人 </div>
+                        <div class="word">breadth <br><br> n. 宽度 </div>
+                        <div class="word">conservation <br><br> n. 保存，保护 </div>
+                        <div class="word">conservative <br><br> a. 保守的 </div>
+                        <div class="word">parallel <br><br> n. 平行线；可相比拟的事物 </div>
+                        <div class="word">passion <br><br> n. 激情，热情 </div>
+                        <div class="word">passive <br><br> a. 被动的，消极的 </div>
+                        <div class="word">pat <br><br> v./n. 轻拍，轻打 </div>
+                        <div class="word">peak <br><br> n. 山峰，顶点 </div>
+                        <div class="word">phenomenon <br><br> n. 现象 </div>
+                        <div class="word">reluctant <br><br> a. 不情愿的，勉强的 </div>
+                        <div class="word">rely <br><br> vi. (on ,upon)依赖，指望 </div>
+                        <div class="word">relevant <br><br> a. 有关的，切题的 </div>
+                        <div class="word">reliable <br><br> a. 可靠的 </div>
+                        <div class="word">relief <br><br> n. 轻松，宽慰；减轻 </div>
+                        <div class="word">reputation <br><br> n. 名气，声誉 </div>
+                        <div class="word">rescue <br><br> vt./n. 营救 </div>
+                        <div class="word">triangle <br><br> n. 三角（形） </div>
+                        <div class="word">sequence <br><br> n. 连续；顺序 </div>
+                        <div class="word">shallow <br><br> a. 浅的 </div>
+                        <div class="word">shiver <br><br> vi/n. 发抖 </div>
+                        <div class="word">shrug <br><br> v./n. 耸肩 </div>
+                        <div class="word">signature <br><br> n. 签名 </div>
+                        <div class="word">sincere <br><br> a. 诚挚的，真诚的 </div>
+                        <div class="word">utilify <br><br> n. 功用，效用 </div>
+                        <div class="word">utilise <br><br> vt. 利用 </div>
+                        <div class="word">utter <br><br> vt. 说出 a. 完全的，彻底的 </div>
+                        <div class="word">variation <br><br> n. 变化，变动 </div>
+                        <div class="word">vehicle <br><br> n. 交通工具，车辆 </div>
+                        <div class="word">applause <br><br> n. 鼓掌，掌声 </div>
+                        <div class="word">appliance <br><br> n. 器具，器械 </div>
+                        <div class="word">consent <br><br> n. 准许，同意 vi (to)准许，同意 </div>
+                        <div class="word">conquer <br><br> vt. 征服 </div>
+                        <div class="word">defect <br><br> n. 缺点，缺陷 </div>
+                        <div class="word">delicate <br><br> a. 易碎的；娇弱的；精美的 </div>
+                        <div class="word">evolve <br><br> v.演变 </div>
+                        <div class="word">evolution <br><br> n. 演变，进化 </div>
+                        <div class="word">frown <br><br> v./n. 皱眉 </div>
+                        <div class="word">frustrate <br><br> vt. 使沮丧 </div>
+                        <div class="word">guarantee <br><br> vt./n. 保证 </div>
+                        <div class="word">guilty <br><br> a. 内疚的；有罪的 </div>
+                        <div class="word">jealous <br><br> a. 妒忌的 </div>
+                        <div class="word">jeans <br><br> n. 牛仔裤 </div>
+                        <div class="word">liquor <br><br> n. 酒，烈性酒 </div>
+                        <div class="word">iter <br><br>/litre n. 升 </div>
+                        <div class="word">modest <br><br> a. 谦虚道 </div>
+                        <div class="word">molecule <br><br> n. 分子 </div>
+                        <div class="word">orbit <br><br> n. 轨道 v. （绕...）作轨道运行 </div>
+                        <div class="word">participate <br><br> v. (in)参与，参加 </div>
+                        <div class="word">particle <br><br> n. 微粒 </div>
+                        <div class="word">particularly <br><br> ad. 特别，尤其 </div>
+                        <div class="word">respond <br><br> vi. 回答，答复；反应 </div>
+                        <div class="word">response <br><br> n. 回答，答复；反应 </div>
+                        <div class="word">sensible <br><br> a. 明智的 </div>
+                        <div class="word">sensitive <br><br> a. 敏感到，灵敏的 </div>
+                        <div class="word">tremble <br><br> vi. 颤抖 </div>
+                        <div class="word">tremendous <br><br> a. 巨大的；精彩的 </div>
+                        <div class="word">trend <br><br> n. 趋向，倾向 </div>
+                        <div class="word">trial <br><br> n. 审讯；试验 </div>
+                        <div class="word">apparent <br><br> a. 显然的，明白的 </div>
+                        <div class="word">appetite <br><br> n. 胃口；欲望 </div>
+                        <div class="word">deposit <br><br> n. 存款，定金 v.存放，储蓄 </div>
+                        <div class="word">deputy <br><br> n. 副职，代表 </div>
+                        <div class="word">derive <br><br> vt. 取得，得到；(from)起源于 </div>
+                        <div class="word">descend <br><br> v. 下来，下降 </div>
+                        <div class="word">missile <br><br> n. 导弹 </div>
+                        <div class="word">mission <br><br> n. 使命；代表团 </div>
+                        <div class="word">mist <br><br> n.薄雾 </div>
+                        <div class="word">noticeable <br><br> a. 显而易见到 </div>
+                        <div class="word">notify <br><br> vt. 通知，告知 </div>
+                        <div class="word">notion <br><br> n. 概念；意图，想法 </div>
+                        <div class="word">resemble <br><br> vt. 像，类似于 </div>
+                        <div class="word">reveal <br><br> vt. 揭露 </div>
+                        <div class="word">revenue <br><br> n. 收入，岁入；税收 </div>
+                        <div class="word">shelter <br><br> n. 掩蔽处；住所 </div>
+                        <div class="word">shield <br><br> n. 防护物，盾 vt. 保护，防护 </div>
+                        <div class="word">vital <br><br> a. 重要的；致命的，生命的 </div>
+                        <div class="word">vitally <br><br> ad. 极度，非常；致命地 </div>
+                        <div class="word">urban <br><br> a. 城市的 </div>
+                        <div class="word">urge <br><br> vt. 鼓励，激励 </div>
+                        <div class="word">urgent <br><br> a. 急迫的，紧急得 </div>
+                        <div class="word">usage <br><br> n. 使用，用法 </div>
+                        <div class="word">violence <br><br> n. 强力，暴力 </div>
+                        <div class="word">violent <br><br> a. 强暴的 </div>
+                        <div class="word">violet <br><br> a. 紫色的 </div>
+                        <div class="word">weed <br><br> n. 杂草，野草 </div>
+                        <div class="word">welfare <br><br> n. 福利 </div>
+                        <div class="word">whatsoever <br><br> ad. （用于否定句）任何 </div>
+                        <div class="word">whereas <br><br> conj. 然而，但是，尽管 </div>
+                        <div class="word">essential <br><br> a. 必不可少的；本质的 </div>
+                        <div class="word">estimate <br><br> n./vt. 估计，估量 </div>
+                        <div class="word">evaluate <br><br> vt. 评估，评价 </div>
+                        <div class="word">exceed <br><br> vt. 超过，越出 </div>
+                        <div class="word">exceedingly <br><br> ad. 非常，极其 </div>
+                        <div class="word">exclaim <br><br> v. 呼喊，大声说 </div>
+                        <div class="word">exclude <br><br> vt. 把...排斥在外，不包括 </div>
+                        <div class="word">exclusive <br><br> a. 读有的，排他的 </div>
+                        <div class="word">excursion <br><br> n. 远足 </div>
+                        <div class="word">flash <br><br> vi. 闪光，闪耀 </div>
+                        <div class="word">flee <br><br> vi. 逃走 </div>
+                        <div class="word">flexible <br><br> a. 易弯曲的 </div>
+                        <div class="word">flock <br><br> n. 羊群，（鸟兽等）一群；一伙人 </div>
+                        <div class="word">hardware <br><br> n. 五金器具 </div>
+                        <div class="word">harmony <br><br> n. 和谐，融洽 </div>
+                        <div class="word">haste <br><br> n. 急速，急忙 </div>
+                        <div class="word">hatred <br><br> n. 憎恶，憎恨 </div>
+                        <div class="word">incident <br><br> n. 事件，事变 </div>
+                        <div class="word">index <br><br> n. 索引，标志 </div>
+                        <div class="word">infant <br><br> n. 婴儿 </div>
+                        <div class="word">infect <br><br> v. 传染 </div>
+                        <div class="word">inferior <br><br> a. 劣等的，次的，下级的 </div>
+                        <div class="word">infinite <br><br> a. 无限的 </div>
+                        <div class="word">ingredient <br><br> n. 组成部分 </div>
+                        <div class="word">inhabitant <br><br> n. 居民 </div>
+                        <div class="word">jail <br><br> n. 监狱 </div>
+                        <div class="word">jam <br><br> n. 果酱；拥挤，堵塞 </div>
+                        <div class="word">jewel <br><br> n. 宝石 </div>
+                        <div class="word">joint <br><br> a.连接的；共同的 </div>
+                        <div class="word">junior <br><br> a. 年少的；资历较浅的 </div>
+                        <div class="word">laser <br><br> n. 激光 </div>
+                        <div class="word">launch <br><br> vt. 发动，发起 </div>
+                        <div class="word">luxury <br><br> n. 奢侈；奢侈品 </div>
+                        <div class="word">magnet <br><br> n. 磁铁，磁体 </div>
+                        <div class="word">male <br><br> a. 男性的，雄的 </div>
+                        <div class="word">female <br><br> a. 女性的，雌的 </div>
+                        <div class="word">manual <br><br> a. 用手的，手工做的 n. 手册 </div>
+                        <div class="word">manufacture <br><br> vt./n. 制造，加工 </div>
+                        <div class="word">marine <br><br> a. 海的；海产的 </div>
+                        <div class="word">mutual <br><br> a. 相互的 </div>
+                        <div class="word">naked <br><br> a. 裸露的 </div>
+                        <div class="word">negative <br><br> a. 否定的，消极的 </div>
+                        <div class="word">neglect <br><br> vt. 忽视，忽略 </div>
+                        <div class="word">origin <br><br> n. 起源，出身 </div>
+                        <div class="word">oval <br><br> a. 椭圆形的 n. 椭圆形 </div>
+                        <div class="word">outset <br><br> n. 开始，开端 </div>
+                        <div class="word">presumably <br><br> ad. 大概，可能 </div>
+                        <div class="word">prevail <br><br> vi. 流行，盛行 </div>
+                        <div class="word">quit <br><br> v. 停止 </div>
+                        <div class="word">quotation <br><br> n. 引文，引语 </div>
+                        <div class="word">recreation <br><br> n. 娱乐活动 </div>
+                        <div class="word">recruit <br><br> vt. 招募，吸收（新成员） </div>
+                        <div class="word">rival <br><br> n. 竞争对手，敌手 </div>
+                        <div class="word">shuttle <br><br> n. 梭子；航天飞机 </div>
+                        <div class="word">skim <br><br> vt. 搬（去），掠过；浏览 </div>
+                        <div class="word">sketch <br><br> n. 草图；梗概 </div>
+                        <div class="word">slender <br><br> a. 苗条的，修长的 </div>
+                        <div class="word">theme <br><br> n. 主题 </div>
+                        <div class="word">textile <br><br> n. 纺织品 </div>
+                        <div class="word">tropical <br><br> a. 热带的，炎热的 </div>
+                        <div class="word">kneel <br><br> vi. 跪 </div>
+                        <div class="word">label <br><br> n. 标签 </div>
+                        <div class="word">merchant <br><br> n. 商人 </div>
+                        <div class="word">mere <br><br> a. 仅仅的，只不过的；纯粹的 </div>
+                        <div class="word">nuisance <br><br> n. 令人讨厌的东西（或人） </div>
+                        <div class="word">numerrous <br><br> a. 众多的，许多的 </div>
+                        <div class="word">parade <br><br> n. 游行 v. 列队行进 </div>
+                        <div class="word">pants <br><br>[pl.] n. 长裤；内裤 </div>
+                        <div class="word">partial <br><br> a. 部分的 </div>
+                        <div class="word">passport <br><br> n. 护照 </div>
+                        <div class="word">prescribe <br><br> vt. 开药，吩咐采用...疗法 </div>
+                        <div class="word">primitive <br><br> a. 原始的，早期的 </div>
+                        <div class="word">ridge <br><br> n. 脊，山脊，埂 </div>
+                        <div class="word">ridiculous <br><br> a. 可笑的，荒漠的 </div>
+                        <div class="word">ridid <br><br> a. 严格的；僵硬的 </div>
+                        <div class="word">withstand <br><br> vt. 经受，承受 </div>
+                        <div class="word">witness <br><br> n. 目击者；证据 vt. 注意到；证明 </div>
+                        <div class="word">withdraw <br><br> v. 收回，撤销 </div>
+                        <div class="word">slippery <br><br> a. 滑的 </div>
+                        <div class="word">smash <br><br> vt. 粉碎，打烂 </div>
+                        <div class="word">snap <br><br> n./vt. 折断，拉断；快照 </div>
+                        <div class="word">software <br><br> n. 软件 </div>
+                        <div class="word">solar <br><br> a. 太阳的 </div>
+                        <div class="word">lunar <br><br> a. 月的，月球的 </div>
+                        <div class="word">submerge <br><br> vi. 潜入水中 </div>
+                        <div class="word">submit <br><br> vi.(to)屈服，听从 </div>
+                        <div class="word">timber <br><br> n. 木材，原木 </div>
+                        <div class="word">tissue <br><br> n. 组织；薄纱，手巾纸 </div>
+                        <div class="word">title <br><br> n. 题目，标题 </div>
+                        <div class="word">tone <br><br> n. 语气，音调631. drift vi. 漂，漂流 </div>
+                        <div class="word">drip <br><br> n. 滴 </div>
+                        <div class="word">durable <br><br> a. 耐用的，持久的 </div>
+                        <div class="word">duration <br><br> n. 持续，持续期间 </div>
+                        <div class="word">dusk <br><br> n. 黄昏，薄暮 </div>
+                        <div class="word">leather <br><br> n. 皮革 </div>
+                        <div class="word">legislation <br><br> n. 法律，法规；立法 </div>
+                        <div class="word">leisure <br><br> n. 闲暇；悠闲 </div>
+                        <div class="word">loose <br><br> a. 松的，宽松的 </div>
+                        <div class="word">loosen <br><br> v. 解开，放松 </div>
+                        <div class="word">tarnest <br><br> a. 认真的，诚挚的 </div>
+                        <div class="word">earthquake <br><br> n. 地震 </div>
+                        <div class="word">echo <br><br> n. 回音，回声 </div>
+                        <div class="word">elaborate <br><br> a. 精心设计的，复杂的 </div>
+                        <div class="word">elastic <br><br> n. 橡皮圈（带） a. 有弹性的 </div>
+                        <div class="word">elbow <br><br> n. 肘 </div>
+                        <div class="word">electron <br><br> n. 电子 </div>
+                        <div class="word">volcano <br><br> n. 火山 </div>
+                        <div class="word">volume <br><br> n. 卷，册；体积，容量 </div>
+                        <div class="word">fatigue <br><br> n. 疲劳，劳累 </div>
+                        <div class="word">faulty <br><br> a. 有错误的，有缺点的 </div>
+                        <div class="word">favorable <br><br> a. 称赞道；有利的，顺利的 </div>
+                        <div class="word">favorite <br><br> a. 特别受喜欢的 n. 喜爱的人或物 </div>
+                        <div class="word">gallery <br><br> n. 画廊 </div>
+                        <div class="word">gallon <br><br> n. 加仑 </div>
+                        <div class="word">gap <br><br> n. 间隔，差距 </div>
+                        <div class="word">garbage <br><br> n. 垃圾，废物 </div>
+                        <div class="word">gaze <br><br> v. 凝视，注视 </div>
+                        <div class="word">gear <br><br> n. 齿轮，传动装置 </div>
+                        <div class="word">gene <br><br> n. 基因661. lest conj. 唯恐，免得 </div>
+                        <div class="word">liable <br><br> a. 可能的，大概的； (to)易于...的 </div>
+                        <div class="word">liberal <br><br> a. 自由得 </div>
+                        <div class="word">liberty <br><br> n. 自由 </div>
+                        <div class="word">licence <br><br>/license n. 许可证，执照 </div>
+                        <div class="word">moisture <br><br> n. 潮湿 </div>
+                        <div class="word">motivate <br><br> vt. 激励，激发 </div>
+                        <div class="word">motive <br><br> n. 动机，目的 </div>
+                        <div class="word">generate <br><br> vt. 生成，产生（光、热、电等） </div>
+                        <div class="word">genius <br><br> n. 天才，天赋 </div>
+                        <div class="word">genuine <br><br> a. 真的，真诚的 </div>
+                        <div class="word">gasoline <br><br> n. 汽油 </div>
+                        <div class="word">germ <br><br> n. 微生物，细菌 </div>
+                        <div class="word">gesture <br><br> n. 姿势，手势 </div>
+                        <div class="word">giant <br><br> a. 巨大的 n. 巨人，巨物 </div>
+                        <div class="word">glimpse <br><br> n. 一瞥，一看 </div>
+                        <div class="word">glory <br><br> n. 光荣，荣誉 </div>
+                        <div class="word">glorious <br><br> n. 光荣的，极好的 </div>
+                        <div class="word">golf <br><br> n. 高尔夫球运动 </div>
+                        <div class="word">hydrogen <br><br> n. 氢 </div>
+                        <div class="word">oxygen <br><br> n. 氧 </div>
+                        <div class="word">hostile <br><br> a. 敌对的，敌意大 </div>
+                        <div class="word">household <br><br> n. 家庭，户 </div>
+                        <div class="word">hook <br><br> n. 钩 </div>
+                        <div class="word">holy <br><br> a. 神圣地，圣洁的 </div>
+                        <div class="word">hint <br><br> n. 暗示，示意 </div>
+                        <div class="word">hesitate <br><br> v. 犹豫 </div>
+                    </div>
+                </div>
+                <script>
+                    let currentIndex = 0;
+                    function showNextWord () {
+                        const words = document.querySelectorAll('.word');
+                        words[currentIndex].classList.remove('active');
+                        let nextIndex;
+                        do {
+                            nextIndex = Math.floor(Math.random() * words.length);
+                        } while (nextIndex === currentIndex);
+                        currentIndex = nextIndex;
+                        words[currentIndex].classList.add('active');
+                    }
+                </script>
+            </div>
+            <div class="right-box">
+                <section class="todolist_container">
+                    <div class="todolist_heading">
+                        <h1 class="todolist_heading_title">To-Do List</h1>
+                    </div>
+                    <div>
+                        <ul class="toDoList" style="text-align: left;">
+                            <li>走软作业</li>
+                            <li>数分作业</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <button class="button" onclick="window.location.href='renyimen.html'">返回</button>
+</body>
+
+</html>
