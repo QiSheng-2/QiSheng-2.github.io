@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人娱乐体验展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1F2937',
+                        light: '#F3F4F6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .section-fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary flex items-center">
+                <i class="fa fa-gamepad mr-2"></i>
+                <span>我的娱乐世界</span>
+            </div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#games" class="hover:text-primary transition-colors">游戏</a></li>
+                <li><a href="#movies" class="hover:text-primary transition-colors">影视</a></li>
+                <li><a href="#books" class="hover:text-primary transition-colors">小说</a></li>
+            </ul>
+            <button class="md:hidden text-gray-600 focus:outline-none" id="menuToggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobileMenu">
+            <ul class="px-4 py-2 space-y-3">
+                <li><a href="#games" class="block py-2 hover:text-primary transition-colors">游戏</a></li>
+                <li><a href="#movies" class="block py-2 hover:text-primary transition-colors">影视</a></li>
+                <li><a href="#books" class="block py-2 hover:text-primary transition-colors">小说</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-gradient-to-r from-dark to-primary text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">我的娱乐体验</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
+                探索我玩过的游戏、看过的影视和阅读过的小说，这些作品塑造了我的审美与思考方式
+            </p>
+            <div class="mt-10 flex justify-center space-x-4">
+                <a href="#games" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                    <i class="fa fa-gamepad mr-2"></i>浏览游戏
+                </a>
+                <a href="#movies" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                    <i class="fa fa-film mr-2"></i>浏览影视
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游戏部分 -->
+    <section id="games" class="py-16 section-fade-in">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center mb-12">
+                <div class="w-12 h-1 bg-primary mr-4"></div>
+                <h2 class="text-3xl md:text-4xl font-bold">我玩过的游戏</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 游戏卡片1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/237/600/400" alt="角色扮演游戏截图" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">塞尔达传说：旷野之息</h3>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Switch</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">这款游戏重新定义了开放世界的可能性，每一次探索都充满惊喜。它教会了我创造性思维和问题解决的多种途径。</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="flex items-center mr-4"><i class="fa fa-star text-yellow-400 mr-1"></i> 9.8/10</span>
+                            <span class="flex items-center"><i class="fa fa-clock-o mr-1"></i> 150+小时</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 游戏卡片2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/110/600/400" alt="策略游戏截图" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">文明6</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">PC</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">通过这款游戏，我深入理解了历史发展的脉络和文明演进的复杂性，培养了长远规划和资源管理能力。</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="flex items-center mr-4"><i class="fa fa-star text-yellow-400 mr-1"></i> 9.2/10</span>
+                            <span class="flex items-center"><i class="fa fa-clock-o mr-1"></i> 200+小时</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 游戏卡片3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/160/600/400" alt="多人合作游戏截图" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">英雄联盟</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">多平台</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">这款团队竞技游戏锻炼了我的协作能力、快速决策能力和在压力下保持冷静的心态，也让我理解了团队角色的重要性。</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="flex items-center mr-4"><i class="fa fa-star text-yellow-400 mr-1"></i> 8.7/10</span>
+                            <span class="flex items-center"><i class="fa fa-clock-o mr-1"></i> 500+小时</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 影视部分 -->
+    <section id="movies" class="py-16 bg-gray-50 section-fade-in">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center mb-12">
+                <div class="w-12 h-1 bg-secondary mr-4"></div>
+                <h2 class="text-3xl md:text-4xl font-bold">我看过的电影与电视剧</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 电影部分 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fa fa-film text-secondary mr-2"></i>电影
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- 电影1 -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row card-hover">
+                            <div class="md:w-1/3 h-48 md:h-auto">
+                                <img src="https://picsum.photos/id/96/300/450" alt="科幻电影海报" class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h4 class="text-xl font-bold mb-2">盗梦空间</h4>
+                                <div class="flex items-center text-sm text-gray-500 mb-3">
+                                    <span class="mr-3">克里斯托弗·诺兰</span>
+                                    <span class="flex items-center"><i class="fa fa-star text-yellow-400 mr-1"></i> 9.3/10</span>
+                                </div>
+                                <p class="text-gray-600">这部电影对现实与梦境的探讨令人着迷，复杂的叙事结构和深刻的哲学思考展示了叙事艺术的无限可能，启发我从多角度思考问题。</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 电影2 -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row card-hover">
+                            <div class="md:w-1/3 h-48 md:h-auto">
+                                <img src="https://picsum.photos/id/24/300/450" alt="剧情电影海报" class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h4 class="text-xl font-bold mb-2">肖申克的救赎</h4>
+                                <div class="flex items-center text-sm text-gray-500 mb-3">
+                                    <span class="mr-3">弗兰克·德拉邦特</span>
+                                    <span class="flex items-center"><i class="fa fa-star text-yellow-400 mr-1"></i> 9.7/10</span>
+                                </div>
+                                <p class="text-gray-600">这部电影关于希望与自由的主题深深打动了我，它教会我们在困境中保持信念的重要性，以及坚持自我的价值。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 电视剧部分 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fa fa-television text-secondary mr-2"></i>电视剧
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- 电视剧1 -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row card-hover">
+                            <div class="md:w-1/3 h-48 md:h-auto">
+                                <img src="https://picsum.photos/id/119/300/450" alt="剧情类电视剧海报" class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h4 class="text-xl font-bold mb-2">绝命毒师</h4>
+                                <div class="flex items-center text-sm text-gray-500 mb-3">
+                                    <span class="mr-3">AMC</span>
+                                    <span class="flex items-center"><i class="fa fa-star text-yellow-400 mr-1"></i> 9.5/10</span>
+                                </div>
+                                <p class="text-gray-600">这部剧对人物心理变化的刻画极为细腻，展示了一个普通人如何在特定环境下逐渐转变的过程，引发我对人性复杂性的思考。</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 电视剧2 -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row card-hover">
+                            <div class="md:w-1/3 h-48 md:h-auto">
+                                <img src="https://picsum.photos/id/175/300/450" alt="科幻类电视剧海报" class="w-full h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h4 class="text-xl font-bold mb-2">黑镜</h4>
+                                <div class="flex items-center text-sm text-gray-500 mb-3">
+                                    <span class="mr-3">Netflix</span>
+                                    <span class="flex items-center"><i class="fa fa-star text-yellow-400 mr-1"></i> 9.0/10</span>
+                                </div>
+                                <p class="text-gray-600">每一集都是一个独立的故事，探讨科技对人类社会和人际关系的潜在影响，让我对技术发展保持批判性思考。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 小说部分 -->
+    <section id="books" class="py-16 section-fade-in">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center mb-12">
+                <div class="w-12 h-1 bg-accent mr-4"></div>
+                <h2 class="text-3xl md:text-4xl font-bold">我阅读过的小说</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 小说1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-64 flex items-center justify-center bg-gray-100 p-4">
+                        <img src="https://picsum.photos/id/24/300/450" alt="科幻小说封面" class="h-full object-cover rounded shadow">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">三体</h3>
+                        <p class="text-gray-500 text-sm mb-3">刘慈欣</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex">
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-500">9.5/10</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">这部科幻巨著不仅展现了宏大的宇宙观，更融入了深刻的哲学思考和对人性的探讨，极大地拓展了我的思维边界。</p>
+                    </div>
+                </div>
+                
+                <!-- 小说2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-64 flex items-center justify-center bg-gray-100 p-4">
+                        <img src="https://picsum.photos/id/20/300/450" alt="奇幻小说封面" class="h-full object-cover rounded shadow">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">指环王</h3>
+                        <p class="text-gray-500 text-sm mb-3">J.R.R.托尔金</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex">
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star-half-o text-yellow-400"></i>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-500">9.2/10</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">这部奇幻史诗构建了一个完整而丰富的中土世界，其中关于勇气、友谊与牺牲的主题，给予了我很多人生启示。</p>
+                    </div>
+                </div>
+                
+                <!-- 小说3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-64 flex items-center justify-center bg-gray-100 p-4">
+                        <img src="https://picsum.photos/id/106/300/450" alt="推理小说封面" class="h-full object-cover rounded shadow">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">白夜行</h3>
+                        <p class="text-gray-500 text-sm mb-3">东野圭吾</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex">
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star-o text-yellow-400"></i>
+                            </div>
+                            <span class="ml-2 text-sm text-gray-500">8.9/10</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">这部推理小说不仅情节引人入胜，更深入探讨了人性中的光明与黑暗，让我对人性的复杂性有了更深刻的理解。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold flex items-center">
+                        <i class="fa fa-gamepad mr-2"></i>
+                        <span>我的娱乐世界</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">分享我的游戏、影视与阅读体验</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#games" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-gamepad text-xl"></i>
+                    </a>
+                    <a href="#movies" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-film text-xl"></i>
+                    </a>
+                    <a href="#books" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-book text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 我的娱乐世界 | 设计与开发展示</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单（如果打开）
+                document.getElementById('mobileMenu').classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 滚动显示动画
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
