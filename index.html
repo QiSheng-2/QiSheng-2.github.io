@@ -1,564 +1,336 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang="ch">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>二次元世界 | 粉色樱花</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        // 配置Tailwind自定义颜色和字体
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#FF9BB3',
-                        secondary: '#FFD1DC',
-                        accent: '#FF6B8B',
-                        dark: '#FF5A7F',
-                        light: '#FFE6EC'
-                    },
-                    fontFamily: {
-                        anime: ['"Comic Sans MS"', '"Bubblegum Sans"', 'cursive']
-                    }
-                }
-            }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .keyboard-card {
-                @apply bg-white/30 backdrop-blur-md rounded-lg p-6 transition-all duration-300 hover:bg-white/50 hover:-translate-y-1 hover:shadow-lg border border-white/20;
-            }
-            .keyboard-card::before {
-                content: '';
-                @apply absolute -left-1 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/30 to-transparent rounded-l;
-            }
-            .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .sakura {
-                position: absolute;
-                background-color: #FFD1DC;
-                border-radius: 50% 50% 50% 0;
-                animation: fall linear infinite;
-                opacity: 0.8;
-            }
-            @keyframes fall {
-                to {
-                    transform: translateY(100vh) rotate(720deg);
-                    opacity: 0;
-                }
-            }
-            .bg-anime-pattern {
-                background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff9bb3' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale">
+<meta property="article:author" content="lvhaiqi">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"ch","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body
-    class="bg-gradient-to-br from-light to-secondary min-h-screen font-anime text-gray-800 overflow-x-hidden relative bg-anime-pattern">
-    <!-- 樱花飘落效果容器 -->
-    <div id="sakura-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-10"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-    <!-- 导航栏 -->
-    <nav class="sticky top-0 z-50 bg-white/20 backdrop-blur-lg border-b border-white/30 transition-all duration-300">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fa fa-cherry-blossom text-accent text-2xl"></i>
-                <h1 class="text-xl md:text-2xl font-bold text-dark">二次元樱花</h1>
-            </div>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#home" class="hover:text-accent transition-colors">首页</a>
-                <a href="#characters" class="hover:text-accent transition-colors">角色</a>
-                <a href="#gallery" class="hover:text-accent transition-colors">画廊</a>
-                <a href="#soundtracks" class="hover:text-accent transition-colors">音乐</a>
-                <a href="#about" class="hover:text-accent transition-colors">关于</a>
-                <button
-                    class="bg-accent/80 hover:bg-accent text-white px-4 py-2 rounded-full transition-all transform hover:scale-105">
-                    <i class="fa fa-heart mr-1"></i> 关注
-                </button>
-            </div>
-            <button class="md:hidden text-dark text-xl">
-                <i class="fa fa-bars"></i>
-            </button>
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/mypage/home.html" rel="section">Home</a></li><li class="menu-item menu-item-post"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>post</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-mypage"><a href="/mypage/" rel="section"><i class="fa fa-star fa-fw"></i>mypage</a></li><li class="menu-item menu-item-projects"><a href="/projects/" rel="section">Projects</a></li><li class="menu-item menu-item-zouruan"><a href="/mypage/zhuye.html" rel="section">zouruan</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
         </div>
-    </nav>
+        <!--/noindex-->
 
-    <!-- 英雄区域 -->
-    <section id="home" class="relative pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 z-20 mb-10 md:mb-0">
-                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark leading-tight text-shadow mb-4">
-                    欢迎来到<br>二次元的世界
-                </h1>
-                <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
-                    探索粉色与樱花交织的梦幻世界，感受动漫带来的无限魅力与感动。
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <button
-                        class="bg-accent hover:bg-dark text-white px-6 py-3 rounded-full transition-all transform hover:scale-105 flex items-center">
-                        <i class="fa fa-play-circle mr-2"></i> 开始探索
-                    </button>
-                    <button
-                        class="bg-white/50 hover:bg-white/70 text-accent border border-accent/30 px-6 py-3 rounded-full transition-all flex items-center">
-                        <i class="fa fa-info-circle mr-2"></i> 了解更多
-                    </button>
-                </div>
-            </div>
-            <div class="md:w-1/2 z-20 relative">
-                <div class="relative">
-                    <img src="https://picsum.photos/id/177/600/600" alt="二次元女孩插画"
-                        class="rounded-2xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div
-                        class="absolute -bottom-6 -left-6 bg-white/70 backdrop-blur-sm p-4 rounded-lg shadow-lg transform -rotate-3 hover:rotate-0 transition-transform duration-300">
-                        <p class="font-bold text-accent"><i class="fa fa-star text-yellow-400"></i> 新番推荐</p>
-                    </div>
-                    <div
-                        class="absolute -top-4 -right-4 bg-white/70 backdrop-blur-sm p-4 rounded-lg shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                        <p class="font-bold text-accent"><i class="fa fa-heart"></i> 人气角色</p>
-                    </div>
-                </div>
-            </div>
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lvhaiqi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
         </div>
-        <!-- 装饰元素 -->
-        <div class="absolute top-1/4 right-10 w-32 h-32 bg-primary/20 rounded-full filter blur-3xl"></div>
-        <div class="absolute bottom-1/4 left-10 w-40 h-40 bg-accent/20 rounded-full filter blur-3xl"></div>
-    </section>
+      </div>
+    </div>
 
-    <!-- 角色展示区 -->
-    <section id="characters" class="py-16 md:py-24 relative">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">人气角色</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">探索二次元世界中最受欢迎的角色，每个角色都有其独特的故事和魅力</p>
-            </div>
+    
+  </aside>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 角色卡片1 - 琴键式设计 -->
-                <div class="keyboard-card relative group">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-1/3 overflow-hidden rounded-lg">
-                            <img src="https://picsum.photos/id/237/300/400" alt="动漫角色"
-                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-bold text-dark mb-2">桜 花音</h3>
-                            <p class="text-gray-600 mb-4 text-sm">温柔善良的少女，拥有与樱花沟通的能力，总是在春天带来希望的消息。</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">治愈系</span>
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">魔法</span>
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">校园</span>
-                            </div>
-                            <a href="#"
-                                class="text-accent hover:text-dark text-sm flex items-center group-hover:underline">
-                                查看详情 <i class="fa fa-arrow-right ml-1 group-hover:ml-2 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 角色卡片2 - 琴键式设计 -->
-                <div class="keyboard-card relative group">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-1/3 overflow-hidden rounded-lg">
-                            <img src="https://picsum.photos/id/1027/300/400" alt="动漫角色"
-                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-bold text-dark mb-2">月 光希</h3>
-                            <p class="text-gray-600 mb-4 text-sm">神秘的转学生，身上隐藏着不为人知的秘密，夜晚会独自仰望星空。</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">神秘</span>
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">奇幻</span>
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">冒险</span>
-                            </div>
-                            <a href="#"
-                                class="text-accent hover:text-dark text-sm flex items-center group-hover:underline">
-                                查看详情 <i class="fa fa-arrow-right ml-1 group-hover:ml-2 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    </div>
 
-                <!-- 角色卡片3 - 琴键式设计 -->
-                <div class="keyboard-card relative group">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-1/3 overflow-hidden rounded-lg">
-                            <img src="https://picsum.photos/id/1062/300/400" alt="动漫角色"
-                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="md:w-2/3">
-                            <h3 class="text-xl font-bold text-dark mb-2">風 翔太</h3>
-                            <p class="text-gray-600 mb-4 text-sm">热血少年，梦想成为最强的剑士，性格开朗，总是能给周围的人带来勇气。</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">热血</span>
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">战斗</span>
-                                <span class="bg-primary/20 text-accent text-xs px-2 py-1 rounded-full">成长</span>
-                            </div>
-                            <a href="#"
-                                class="text-accent hover:text-dark text-sm flex items-center group-hover:underline">
-                                查看详情 <i class="fa fa-arrow-right ml-1 group-hover:ml-2 transition-all"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="main-inner index posts-expand">
 
-            <div class="text-center mt-12">
-                <button
-                    class="bg-white/40 hover:bg-white/60 text-accent border border-accent/30 px-6 py-3 rounded-full transition-all flex items-center mx-auto">
-                    查看更多角色 <i class="fa fa-chevron-right ml-2"></i>
-                </button>
-            </div>
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/08/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lvhaiqi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/10/08/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">年度总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-10-08 15:55:13 / Modified: 15:55:29" itemprop="dateCreated datePublished" datetime="2025-10-08T15:55:13+08:00">2025-10-08</time>
+    </span>
+
+  
+</div>
+
         </div>
-    </section>
+      </header>
 
-    <!-- 画廊区域 -->
-    <section id="gallery" class="py-16 md:py-24 bg-white/10 relative">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">精美画廊</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">精选二次元插画作品，每一幅都充满了艺术家的心血与创意</p>
-            </div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="年度总结"><a href="#年度总结" class="headerlink" title="年度总结"></a>年度总结</h2><p>2024</p>
+<p>这是我人生中继往开来，承上启下的一年，上半年高中的痛苦生活与下半年大学的快乐生活形成了鲜明的对比。回望过去，上半年的我和下半年的我都无法想象对方的生活。</p>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                <!-- 画廊图片1 -->
-                <div class="overflow-hidden rounded-lg group relative aspect-square">
-                    <img src="https://picsum.photos/id/1015/400/400" alt="二次元插画"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <p class="text-white p-3 text-sm">樱花树下的约定</p>
-                    </div>
-                </div>
+      
+    </div>
 
-                <!-- 画廊图片2 -->
-                <div class="overflow-hidden rounded-lg group relative aspect-square">
-                    <img src="https://picsum.photos/id/1016/400/400" alt="二次元插画"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <p class="text-white p-3 text-sm">星空下的告白</p>
-                    </div>
-                </div>
+    
+    
+    
 
-                <!-- 画廊图片3 -->
-                <div class="overflow-hidden rounded-lg group relative aspect-square">
-                    <img src="https://picsum.photos/id/1018/400/400" alt="二次元插画"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <p class="text-white p-3 text-sm">雨中的邂逅</p>
-                    </div>
-                </div>
-
-                <!-- 画廊图片4 -->
-                <div class="overflow-hidden rounded-lg group relative aspect-square">
-                    <img src="https://picsum.photos/id/1019/400/400" alt="二次元插画"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <p class="text-white p-3 text-sm">夏日祭典</p>
-                    </div>
-                </div>
-
-                <!-- 画廊图片5 -->
-                <div class="overflow-hidden rounded-lg group relative aspect-square">
-                    <img src="https://picsum.photos/id/1023/400/400" alt="二次元插画"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <p class="text-white p-3 text-sm">冬日恋歌</p>
-                    </div>
-                </div>
-
-                <!-- 画廊图片6 -->
-                <div class="overflow-hidden rounded-lg group relative aspect-square">
-                    <img src="https://picsum.photos/id/1035/400/400" alt="二次元插画"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <p class="text-white p-3 text-sm">魔法学院</p>
-                    </div>
-                </div>
-
-                <!-- 画廊图片7 -->
-                <div class="overflow-hidden rounded-lg group relative aspect-square">
-                    <img src="https://picsum.photos/id/1039/400/400" alt="二次元插画"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <p class="text-white p-3 text-sm">海边的回忆</p>
-                    </div>
-                </div>
-
-                <!-- 画廊图片8 -->
-                <div class="overflow-hidden rounded-lg group relative aspect-square">
-                    <img src="https://picsum.photos/id/1059/400/400" alt="二次元插画"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <p class="text-white p-3 text-sm">异世界之门</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <button
-                    class="bg-white/40 hover:bg-white/60 text-accent border border-accent/30 px-6 py-3 rounded-full transition-all flex items-center mx-auto">
-                    浏览更多作品 <i class="fa fa-chevron-right ml-2"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 音乐原声区 -->
-    <section id="soundtracks" class="py-16 md:py-24 relative">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">动漫原声</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">聆听那些触动心灵的旋律，重温动画中的经典瞬间</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 音乐卡片1 - 琴键式设计 -->
-                <div class="keyboard-card relative group">
-                    <div class="flex items-center gap-4">
-                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://picsum.photos/id/1074/200/200" alt="动漫原声封面"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-dark">樱花纷飞时</h3>
-                            <p class="text-sm text-gray-600">《春日物语》OP</p>
-                            <div class="mt-2 flex items-center">
-                                <button
-                                    class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center hover:bg-dark transition-colors">
-                                    <i class="fa fa-play"></i>
-                                </button>
-                                <div class="ml-3 flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
-                                    <div class="h-full bg-accent w-1/3"></div>
-                                </div>
-                                <span class="ml-3 text-xs text-gray-500">1:35</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 音乐卡片2 - 琴键式设计 -->
-                <div class="keyboard-card relative group">
-                    <div class="flex items-center gap-4">
-                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://picsum.photos/id/1080/200/200" alt="动漫原声封面"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-dark">月光下的誓言</h3>
-                            <p class="text-sm text-gray-600">《月影传说》ED</p>
-                            <div class="mt-2 flex items-center">
-                                <button
-                                    class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center hover:bg-dark transition-colors">
-                                    <i class="fa fa-play"></i>
-                                </button>
-                                <div class="ml-3 flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
-                                    <div class="h-full bg-accent w-2/5"></div>
-                                </div>
-                                <span class="ml-3 text-xs text-gray-500">2:18</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 音乐卡片3 - 琴键式设计 -->
-                <div class="keyboard-card relative group">
-                    <div class="flex items-center gap-4">
-                        <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://picsum.photos/id/1082/200/200" alt="动漫原声封面"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="flex-grow">
-                            <h3 class="font-bold text-dark">风之旋律</h3>
-                            <p class="text-sm text-gray-600">《风之谷》插曲</p>
-                            <div class="mt-2 flex items-center">
-                                <button
-                                    class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center hover:bg-dark transition-colors">
-                                    <i class="fa fa-play"></i>
-                                </button>
-                                <div class="ml-3 flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
-                                    <div class="h-full bg-accent w-1/2"></div>
-                                </div>
-                                <span class="ml-3 text-xs text-gray-500">3:05</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 关于区域 -->
-    <section id="about" class="py-16 md:py-24 bg-white/10 relative">
-        <div class="container mx-auto px-4">
-            <div
-                class="max-w-4xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-lg border border-white/20">
-                <div class="text-center mb-10">
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">关于二次元世界</h2>
-                    <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
-                </div>
-
-                <div class="prose lg:prose-xl mx-auto text-gray-700">
-                    <p>二次元世界是一个充满想象力与创造力的空间，它不仅仅是动画、漫画的集合，更是一种文化现象和生活态度。</p>
-                    <p>在这里，我们可以体验到不同的人生，感受到超越现实的情感，找到属于自己的精神寄托。每一个角色、每一段故事，都可能成为我们成长路上的灯塔。</p>
-                    <p>本网站致力于分享二次元文化的美好，让更多人了解并喜爱这个独特的世界。无论你是资深爱好者，还是刚刚踏入这个领域的新手，都能在这里找到属于自己的乐趣。</p>
-                </div>
-
-                <div class="mt-12 flex flex-wrap justify-center gap-6">
-                    <a href="#" class="text-accent hover:text-dark transition-colors flex items-center">
-                        <i class="fa fa-facebook-square text-2xl"></i>
-                    </a>
-                    <a href="#" class="text-accent hover:text-dark transition-colors flex items-center">
-                        <i class="fa fa-twitter-square text-2xl"></i>
-                    </a>
-                    <a href="#" class="text-accent hover:text-dark transition-colors flex items-center">
-                        <i class="fa fa-instagram text-2xl"></i>
-                    </a>
-                    <a href="#" class="text-accent hover:text-dark transition-colors flex items-center">
-                        <i class="fa fa-youtube-play text-2xl"></i>
-                    </a>
-                    <a href="#" class="text-accent hover:text-dark transition-colors flex items-center">
-                        <i class="fa fa-pinterest-square text-2xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 页脚 -->
-    <footer class="bg-dark/90 text-white py-10">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2">
-                        <i class="fa fa-cherry-blossom text-secondary text-xl"></i>
-                        <h2 class="text-xl font-bold">二次元樱花</h2>
-                    </div>
-                    <p class="text-sm text-gray-300 mt-2">探索粉色与樱花交织的梦幻世界</p>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors">首页</a>
-                    <a href="#characters" class="text-gray-300 hover:text-white transition-colors">角色</a>
-                    <a href="#gallery" class="text-gray-300 hover:text-white transition-colors">画廊</a>
-                    <a href="#soundtracks" class="text-gray-300 hover:text-white transition-colors">音乐</a>
-                    <a href="#about" class="text-gray-300 hover:text-white transition-colors">关于</a>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-                <p>© 2023 二次元樱花 | 用爱创造的二次元世界</p>
-            </div>
-        </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
     </footer>
+  </article>
+</div>
 
-    <!-- 回到顶部按钮 -->
-    <button id="back-to-top"
-        class="fixed bottom-8 right-8 bg-accent/80 hover:bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-all duration-300 opacity-0 translate-y-10">
-        <i class="fa fa-chevron-up"></i>
-    </button>
 
-    <script>
-        // 樱花飘落效果
-        function createSakura () {
-            const container = document.getElementById('sakura-container');
-            if (!container) return;
 
-            // 创建樱花元素
-            const sakura = document.createElement('div');
-            sakura.classList.add('sakura');
 
-            // 随机大小
-            const size = Math.random() * 10 + 5;
-            sakura.style.width = `${size}px`;
-            sakura.style.height = `${size}px`;
+    
 
-            // 随机位置
-            sakura.style.left = `${Math.random() * 100}vw`;
-            sakura.style.top = `-${size}px`;
 
-            // 随机旋转
-            sakura.style.transform = `rotate(${Math.random() * 360}deg)`;
+<div class="post-block">
+  
+  
 
-            // 随机动画时长
-            const duration = Math.random() * 10 + 10;
-            sakura.style.animationDuration = `${duration}s`;
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/08/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93/">
 
-            // 随机动画延迟
-            sakura.style.animationDelay = `${Math.random() * 5}s`;
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="lvhaiqi">
+    </span>
 
-            // 添加到容器
-            container.appendChild(sakura);
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
 
-            // 动画结束后移除元素
-            setTimeout(() => {
-                sakura.remove();
-            }, duration * 1000);
-        }
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/10/08/%E6%AF%8F%E5%91%A8%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">每周总结</a>
+        </h2>
 
-        // 定时创建樱花
-        setInterval(createSakura, 300);
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
 
-        // 初始创建一批樱花
-        for (let i = 0; i < 20; i++) {
-            setTimeout(createSakura, i * 300);
-        }
+      <time title="Created: 2025-10-08 15:54:22 / Modified: 15:54:38" itemprop="dateCreated datePublished" datetime="2025-10-08T15:54:22+08:00">2025-10-08</time>
+    </span>
 
-        // 回到顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
+  
+</div>
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.remove('opacity-0', 'translate-y-10');
-                backToTopButton.classList.add('opacity-100', 'translate-y-0');
-            } else {
-                backToTopButton.classList.add('opacity-0', 'translate-y-10');
-                backToTopButton.classList.remove('opacity-100', 'translate-y-0');
-            }
+        </div>
+      </header>
 
-            // 导航栏滚动效果
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('py-2', 'shadow-md');
-                nav.classList.remove('py-3');
-            } else {
-                nav.classList.add('py-3');
-                nav.classList.remove('py-2', 'shadow-md');
-            }
-        });
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>这是为了以后的每周总结开一个头，以后的每周总结会放在周日这一天。<br>我必须通过这种方式来记录自己的生活，特别是记录下此刻的状态，这样，当我对过去感到悔恨时，这就是我唯一的宽恕</p>
 
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+      
+    </div>
 
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+    
+    
+    
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lvhaiqi</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
 </body>
-
 </html>
